@@ -1,19 +1,15 @@
-import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
-
+import { initPlasmicLoader } from "@plasmicapp/loader-react";
 export const PLASMIC = initPlasmicLoader({
   projects: [
     {
-      id: "idR2eaXzaLsNNmiK7g1EGL",
-      token: "bJE9rybjOC3GTr40Qnb4nx2hwuUIVZTaSWhwbs5iuEijWyTg3cw2aLZQUved4yogUZbtmjZvzuMPmYl2kQ01rQ",
-    },
+      id: "deMgG4SQLgJdiKkfL4hfrY",  // ID of a project you are using
+      token: "DstaVbNYv1rdxTEXqNHHQWbjFy2c9UXWoqgIvs9bVPoDth0OP3p62DHKNZdHE1yFVukGMb9V8w49wC6Ug"  // API token for that project
+    }
   ],
-
-  // By default Plasmic will use the last published version of your project.
-  // For development, you can set preview to true, which will use the unpublished
-  // project, allowing you to see your designs without publishing.  Please
-  // only use this for development, as this is significantly slower.
-  preview: false,
-});
+  // Fetches the latest revisions, whether or not they were unpublished!
+  // Disable for production to ensure you render only published changes.
+  preview: true,
+})
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
