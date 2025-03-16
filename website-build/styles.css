@@ -1,4 +1,21 @@
 /*Universal Styling*/
+/*body {
+    margin-left: 5em;
+    margin-right: 5em;
+}*/
+@font-face {
+    font-family: "Monda";
+    src: url("/fonts/Monda-VariableFont_wght.ttf");
+  }
+  
+body {
+    font-family: "Monda";
+}
+
+.body {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
 .logo {
     background-image: url("images/logo.png");
     background-size:     cover;                     
@@ -11,14 +28,45 @@
     margin: 1vh;
 }
 
-.header {
-    /*background: rgb(179,25,66);
-    background: linear-gradient(90deg, rgba(179,25,66,1) 0%, rgba(255,255,255,1) 50%, rgba(10,49,97,1) 100%);*/
-    height: 10vh;
-    box-shadow: 2px 3px #00000060;
+/*.header {
+    background: rgb(179,25,66);
+    background: linear-gradient(90deg, rgba(179,25,66,1) 0%, rgba(255,255,255,1) 50%, rgba(10,49,97,1) 100%);
+}*/
+
+
+.navigation li {
+    list-style: none;
+    text-align: center;
+    border-radius: 15px;
+    padding: .5rem;
 }
 
-body {
-    background: rgb(255,255,255);
-background: linear-gradient(140deg, rgba(255,255,255,1) 0%, rgba(179,25,66,1) 48%);
+.navigation a:link{
+    text-decoration: none;
+    color: #a7a6a6;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.navigation ul {
+    padding-inline-start: 0;
+    display: flex;
+    gap: .5em;
+    background-color: #bb133dad;
+}
+
+.section-one {
+    background-image: url("images/american-2798408_1280.jpg");
+    height: 45vh;
+    background-size: cover;                     
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.buy-now {
+    position: sticky;
+    top: 300px;
+    z-index: 9999;
+    border: none;
+    font-weight: 800;
 }
