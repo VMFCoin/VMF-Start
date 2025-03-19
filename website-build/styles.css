@@ -43,14 +43,18 @@ body {
 .navigation a:link{
     text-decoration: none;
     color: #a7a6a6;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 600;
+}
+
+.navigation a:hover {
+    color: azure;
 }
 
 .navigation ul {
     padding-inline-start: 0;
-    display: flex;
-    gap: .5em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     background-color: #bb133dad;
 }
 
@@ -191,4 +195,14 @@ body {
 .section-two {
     margin-left: 10rem;
     margin-right: 10rem;
+}
+
+.section-two img{
+    height: 20vw;
+    justify-self: end;
+}
+
+.text-image-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
