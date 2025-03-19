@@ -1,16 +1,25 @@
 /*Universal Styling*/
+:root {
+    --background-image: url("images/american-2798408_1280.jpg");
+}
 
 @font-face {
     font-family: "Monda";
     src: url("./fonts/Monda-VariableFont_wght.ttf");
   }
+
+* {
+    box-sizing: border-box;
+}
   
 body {
     font-family: "Monda";
     margin: 0;
-    box-sizing: border-box;
 }
-
+.header, .navigation {
+    margin: 0;
+    padding: 0;
+}
 /*.body {
     margin-left: 8rem;
     margin-right: 8rem;
@@ -20,11 +29,12 @@ body {
     background-size:     cover;                     
     background-repeat:   no-repeat;
     background-position: center center;
-    height: 8vh;
-    width: 8vh;
+    height: 10vh;
+    width: 10vh;
     border-radius: 50px;
     border: none;
     margin: 1vh;
+    cursor: pointer;
 }
 
 /*.header {
@@ -59,7 +69,7 @@ body {
 }
 
 .section-one {
-    background-image: url("images/american-2798408_1280.jpg");
+    background-image: var(--background-image);
     height: 45vh;
     background-size: cover;                     
     background-repeat: no-repeat;
@@ -81,23 +91,17 @@ body {
     color: #a7a6a6;
 }
 
-.memoriam img{
-    height: 20vw;
-}
-
-.memoriam{
+.memoriam {
     background-image: url("./images/us-flag-3838582_1920.jpg");
     background-size: cover;                     
     background-repeat: no-repeat;
     background-position: center center; 
     height: 600px;  
     padding-top: 3rem;
-}
-
-.memoriam h2{
-    font-size: 30px;
-    margin-top: 0;
-    margin-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .memoriam-contents {
@@ -109,45 +113,113 @@ body {
     text-align: center;
     gap: 1em;
     height: 500px;
-    
     color: white;
     border-radius: 30px;
     padding: 1rem;
+    position: relative;
 }
 
 .grid-row-span-2 {
     grid-column: span 2;
 }
 
-.memoriam-one {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column: 1;
-    gap: 1em;
-    align-items: center;
-    justify-items: center;
-}
-
-.grid-span-2 {
-    grid-column: span 2;
-}
-
+.memoriam-one,
 .memoriam-two {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    padding: 1rem;
+    height: auto;  
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.memoriam-rank {
-    font-weight: 900;
-    font-size: 18px;
+.memoriam-one:hover,
+.memoriam-two:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.memoriam-one img,
+.memoriam-two img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    max-height: 300px;
+    z-index: 1;
+}
+
+.memoriam-one:hover img,
+.memoriam-two:hover img {
+    transform: scale(1.05);
 }
 
 .memoriam-text {
-    overflow: hidden;
-    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    opacity: 0;
+    width: 90%;  
+    max-height: none; 
+    text-align: center;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.memoriam-one:hover .memoriam-text,
+.memoriam-two:hover .memoriam-text {
+    opacity: 1;
+}
+
+.memoriam-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 3;
+    opacity: 1;  
+    transition: opacity 0.3s ease; 
+}
+
+
+.memoriam-one:hover .memoriam-name,
+.memoriam-two:hover .memoriam-name {
+    opacity: 0; 
+}
+
+@media (max-width: 768px) {
+    .memoriam-contents {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        grid-template-columns: 1fr;
+    }
+
+    .memoriam-one,
+    .memoriam-two {
+        text-align: left;
+    }
+
+    .memoriam-one img,
+    .memoriam-two img {
+        max-height: 200px;
+    }
+
+    .memoriam-name {
+        bottom: 15px;
+    }
 }
 
 .bottom {
@@ -197,6 +269,11 @@ body {
     margin-right: 10rem;
 }
 
+.section-two h1 {
+    font-size: 35px;
+    color: #0a3161;
+}
+
 .section-two img{
     height: 20vw;
     justify-self: end;
@@ -206,3 +283,5 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+
