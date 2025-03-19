@@ -105,7 +105,7 @@ body {
     text-align: center;
     gap: 1em;
     height: 500px;
-    overflow: hidden;
+    
     color: white;
     border-radius: 30px;
     padding: 1rem;
@@ -132,6 +132,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
+    align-items: center;
+    justify-content: center;
 }
 
 .memoriam-rank {
@@ -139,6 +141,45 @@ body {
     font-size: 18px;
 }
 
+.memoriam-text {
+    overflow: hidden;
+    height: 400px;
+}
+
+.bottom {
+    background-color: #0a3161;
+    color: #a7a6a6;
+    padding: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #a7a6a6;
+}
+
+.footer-links a:hover {
+    color: azure;
+}
+
+.socials img{
+    height: 16px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.socials .bluesky img{
+    height: 24px;
+}
 /*Home Page Styling*/
 .section-two {
     margin-left: 10rem;
