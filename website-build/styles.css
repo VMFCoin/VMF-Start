@@ -20,10 +20,7 @@ body {
     margin: 0;
     padding: 0;
 }
-/*.body {
-    margin-left: 8rem;
-    margin-right: 8rem;
-}*/
+
 .logo {
     background-image: url("images/logo.png");
     background-size:     cover;                     
@@ -37,11 +34,6 @@ body {
     cursor: pointer;
 }
 
-/*.header {
-    background: rgb(179,25,66);
-    background: linear-gradient(90deg, rgba(179,25,66,1) 0%, rgba(255,255,255,1) 50%, rgba(10,49,97,1) 100%);
-}*/
-
 
 .navigation li {
     list-style: none;
@@ -50,15 +42,27 @@ body {
     padding: .5rem;
 }
 
-.navigation a:link{
+.navigation a:link {
     text-decoration: none;
     color: #a7a6a6;
     font-size: 18px;
     font-weight: 600;
 }
 
+
+.navigation a:visited {
+    color: #a7a6a6;
+}
+
+
 .navigation a:hover {
     color: azure;
+}
+
+
+.navigation a:focus {
+    outline: none;
+    text-decoration: underline;
 }
 
 .navigation ul {
