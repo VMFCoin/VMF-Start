@@ -1,7 +1,7 @@
 const images = [
-    'images/us-flag-3838582_1920.jpg',
-    'images/pexels-nc-farm-bureau-mark-8576735.jpg',
-    'images/pexels-sonneblom-457563.jpg',
+    'images/section-one-bg-one.jpg',
+    'images/section-one-bg-two.jpg',
+    'images/section-one-bg-three.jpg',
 ];
 
 
