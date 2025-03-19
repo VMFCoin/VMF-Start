@@ -180,6 +180,13 @@ body {
 .socials .bluesky img{
     height: 24px;
 }
+
+.motto {
+    text-align: center;
+    font-size: 60px;
+    color: #0a3161;
+}
+
 /*Home Page Styling*/
 .section-two {
     margin-left: 10rem;
