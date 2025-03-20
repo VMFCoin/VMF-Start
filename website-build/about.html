@@ -19,15 +19,21 @@
       <div class= "header">
           <button class="logo" onclick="window.location.href='./index.html'"></button>
       </div>
-      <div class="navigation">
-          <ul>
-              <li><a href="partners.html">Partnered Charities</a></li>
-              <li><a href="rewards.html">Rewards</a></li>
-              <li><a href="ambassador.html">Be an Ambassador</a></li>
-              <li><a href="how-to-buy.html">How to Buy VMF Coin</a></li>
-              <li><a href="donate-to-dev-team.html">Donate To The Development Team</a></li>
+      <button class="sr-only" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+      <button class="mobile-nav-toggle"><span aria-controls="primary-navigation" aria-expanded="false" id="dropdown"></span></button>
+      <nav>  
+        <div class="navigation">
+          <ul data-visible="false" id="primary-navigation" class="primary-navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="partners.html">Partnered Charities</a></li>
+            <li><a href="rewards.html">Rewards</a></li>
+            <li><a href="ambassador.html">Be an Ambassador</a></li>
+            <li><a href="how-to-buy.html">How to Buy VMF Coin</a></li>
+            <li><a href="donate-to-dev-team.html">Donate To The Development Team</a></li>
           </ul>
-      </div>
+        </div>
+      </nav>  
+    </div>
     </div>
     <button class="buy-now" onclick="">Click Here to Learn How to Buy VMF Coin</button>
     <div class="body">
@@ -59,12 +65,12 @@
             <div class="bottom">
                 <ul class="socials">
                     <li>Connect with us:</li>
-                    <li><a href="https://www.facebook.com/profile.php?id=61573380076524" target="_blank" rel="noopener noreferrer"><img src="/images/Facebook_Logo_Primary.png"></a></li>
-                    <li><a href="https://www.instagram.com/vmfcoin" target="_blank" rel="noopener noreferrer"><img src="../images/Instagram_Glyph_Gradient.png"></a></li>
-                    <li><a href="https://x.com/vmfcoin" target="_blank" rel="noopener noreferrer"><img src="../images/logo-black.png"></a></li>
-                    <li><img src="../images/Discord-Symbol-Blurple.png"></li>
-                    <li><a href="https://warpcast.com/vmfcoin"><img src="../images/Warpcast-Icon.png"></a></li>
-                    <li><a class="bluesky" href="https://bsky.app/profile/vmfcoin.bsky.social" target="_blank" rel="noopener noreferrer"><img src="../images/bluesky_media_kit_logo_svgs.svg"></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61573380076524" target="_blank" rel="noopener noreferrer"><img src="./images/Facebook_Logo_Primary.png"></a></li>
+                    <li><a href="https://www.instagram.com/vmfcoin" target="_blank" rel="noopener noreferrer"><img src="./images/Instagram_Glyph_Gradient.png"></a></li>
+                    <li><a href="https://x.com/vmfcoin" target="_blank" rel="noopener noreferrer"><img src="./images/logo-black.png"></a></li>
+                    <li><img src="./images/Discord-Symbol-Blurple.png"></li>
+                    <li><a href="https://warpcast.com/vmfcoin"><img src="./images/Warpcast-Icon.png"></a></li>
+                    <li><a class="bluesky" href="https://bsky.app/profile/vmfcoin.bsky.social" target="_blank" rel="noopener noreferrer"><img src="./images/bluesky_media_kit_logo_svgs.svg"></a></li>
                 </ul>
                 <ul class="footer-links">
                     <li>www.vmfcoin.com</li>
@@ -79,5 +85,6 @@
         </div>
     </div>
 <script src="background.js"></script>  
+<script src="mobile-navigation.js"></script>
 </body>
 </html>

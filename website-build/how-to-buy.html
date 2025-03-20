@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>VMF Coin | How to Buy</title>
+    <title>VMF Coin | How To Buy</title>
     <!--NEEDS TO BE COMPLETED
     <meta property="og:image" content="" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -19,16 +19,21 @@
       <div class= "header">
           <button class="logo" onclick="window.location.href='./index.html'"></button>
       </div>
-      <div class="navigation">
-          <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="partners.html">Partnered Charities</a></li>
-              <li><a href="rewards.html">Rewards</a></li>
-              <li><a href="ambassador.html">Be an Ambassador</a></li>
-              <li><a href="how-to-buy.html">How to Buy VMF Coin</a></li>
-              <li><a href="donate-to-dev-team.html">Donate To The Development Team</a></li>
+      <button class="sr-only" aria-controls="primary-navigation" aria-expanded="false"><span class="sr-only">Menu</span></button>
+      <button class="mobile-nav-toggle"><span aria-controls="primary-navigation" aria-expanded="false" id="dropdown"></span></button>
+      <nav>  
+        <div class="navigation">
+          <ul data-visible="false" id="primary-navigation" class="primary-navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="partners.html">Partnered Charities</a></li>
+            <li><a href="rewards.html">Rewards</a></li>
+            <li><a href="ambassador.html">Be an Ambassador</a></li>
+            <li><a href="donate-to-dev-team.html">Donate To The Development Team</a></li>
           </ul>
-      </div>
+        </div>
+      </nav>  
+    </div>
     </div>
     <button class="buy-now" onclick="">Click Here to Learn How to Buy VMF Coin</button>
     <div class="body">
@@ -80,5 +85,6 @@
         </div>
     </div>
 <script src="background.js"></script>  
+<script src="mobile-navigation.js"></script>
 </body>
 </html>
