@@ -1,6 +1,6 @@
 const images = [
     'images/section-one-bg-one.jpg',
-    'images/section-one-bg-two.jpg',
+    'images/section-one-bg-two2.jpg',
     'images/section-one-bg-three.jpg',
 ];
 
