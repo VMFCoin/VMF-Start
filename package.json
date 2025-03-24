@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@moonpay/moonpay-react": "^1.8.10",
     "@plasmicapp/loader-nextjs": "^1.0.415",
     "next": "14.2.24",
     "react": "^18",
