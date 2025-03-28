@@ -1,18 +1,36 @@
 /*Universal Styling*/
 :root {
     --background-image: url("images/american-2798408_1280.jpg");
+    /*Font Size 80 @1200 > 60 @900*/
+    --step--2: clamp(2.6042rem, 1.027rem + 2.8039vw, 3.2rem);
+    --step--1: clamp(3.125rem, 0.8088rem + 4.1176vw, 4rem);
+    --step-0: clamp(3.75rem, 0.4412rem + 5.8824vw, 5rem);
+    --step-1: clamp(4.5rem, -0.1324rem + 8.2353vw, 6.25rem);
+    --step-2: clamp(5.4rem, -0.986rem + 11.3529vw, 7.8125rem);
+    --step-3: clamp(6.48rem, -2.2172rem + 15.4618vw, 9.7656rem);
+    --step-4: clamp(7.776rem, -3.9532rem + 20.8519vw, 12.207rem);
+    --step-5: clamp(9.3312rem, -6.3595rem + 27.8945vw, 15.2588rem);
+    --step--2-24px: clamp(0.5208rem, -0.6417rem + 2.0667vw, 0.96rem);
+  --step--1-24px: clamp(0.625rem, -0.8971rem + 2.7059vw, 1.2rem);
+  --step-0-24px: clamp(0.75rem, -1.2353rem + 3.5294vw, 1.5rem);
+  --step-1-24px: clamp(0.9rem, -1.6809rem + 4.5882vw, 1.875rem);
+  --step-2-24px: clamp(1.08rem, -2.2652rem + 5.9471vw, 2.3438rem);
+  --step-3-24px: clamp(1.296rem, -3.0285rem + 7.6879vw, 2.9297rem);
+  --step-4-24px: clamp(1.5552rem, -4.0219rem + 9.9149vw, 3.6621rem);
+  --step-5-24px: clamp(1.8662rem, -5.311rem + 12.7595vw, 4.5776rem);
 }
 
 @font-face {
     font-family: "Inter";
     src: url("./fonts/Monda-VariableFont_wght.ttf");
-    /*font-family: "Army-Rust";
-    src: url("./fonts/ARMY_RUST.ttf");*/
+    font-family: "Army-Rust";
+    src: url("./fonts/ARMY_RUST.ttf");
   }
 
 * {
     box-sizing: border-box;
 }
+
 
 .sr-only{
     display: none;
@@ -28,6 +46,7 @@
     .section-two {
         margin-left: 10rem;
         margin-right: 10rem;
+        font-size: var(--step-0-24px);
     }
 }
     
@@ -81,6 +100,7 @@ body {
     font-family: "Inter";
     margin: 0;
     color: #828282;
+    font-size: var(--step-0-24px);
 }
 .header, .navigation {
     margin: 0;
@@ -143,6 +163,14 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
+}
+
+.body .inter {
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: 48px;
+    text-align: left;
+    letter-spacing: normal;
 }
 
 .buy-now {
@@ -333,6 +361,13 @@ body {
 
 /*Home Page Styling*/
 
+.heli {
+    height: 30vw;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
 .section-two h1 {
     font-size: 35px;
@@ -341,18 +376,28 @@ body {
 
 .section-two img{
     height: 20vw;
-    justify-self: end;
+    float: right;
 }
 
-.text-image-box {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.salute {
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 70vw;
+}
+
+.text-image-box strong{
+    color: #000;
 }
 
 .body h1 {
     font-family: "Army-Rust";
     text-align: center;
-    font-size: 60px;
+    font-size: var(--step-0);
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-top: -20px;
 }
 
 .partner-contents {
@@ -373,7 +418,7 @@ body {
     text-align: center;
     gap: 1em;
     height: 1100px;
-    color: white;
+    color: #062863;
     border-radius: 30px;
     padding: 1rem;
     position: relative;
@@ -381,6 +426,9 @@ body {
 
 .grid-row-span-2 {
     grid-column: span 2;
+    font-size: 40px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .partner {
@@ -475,10 +523,20 @@ body {
 
     .partner-name {
         bottom: 15px;
+        background-color: #a7a6a6;
+        text-align: center;
+        border-radius: 25px;
+    }
+    .body h1 {
+        font-size: var(--step--1);
     }
 }
 
-.section-three strong{
+.bold strong{
+    color: #000;
+}
+
+.section-three strong {
     color: #000;
 }
 
@@ -497,17 +555,131 @@ body {
     font-weight: 900;
 }
 
-.section-three-text {
+.section-three {
     margin-left: 8.1em;
     margin-right: 8.1em;
 }
 
 .section-three .bold{
     font-size: 30px;
+    color: #062863;
 }
 
 .section-three img {
-    height: 300px;
+    width: 600px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.right {
+    text-align: right;
+}
+
+.section-two h3{
+    font-size: 30px;
+}
+.section-four h3 {
+    font-size: 48px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    color: #062863;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.section-four {
+    margin-left: 8.1em;
+    margin-right: 8.1em;
+}
+.section-five h3 {
+    font-size: 48px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    color: #062863;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.section-five {
+    margin-left: 8.1em;
+    margin-right: 8.1em;
+}
+
+h3 {
+    font-size: 48px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    color: #062863;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.vote ul {
+    list-style: none;
+    text-align: center;
+}
+
+.vote li {
+    font-size: 36px;
+    color: #000;
+}
+
+.vote-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vote-header img {
+    height: 60px;
+}
+
+.vote-box {
+    border: solid #062863 6px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    padding: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
     margin: auto;
+    gap: 0rem;
+    border-radius: 20px;
+}
+
+.vote-box p {
+    grid-column: 1 / 3;
+    font-size: var(--step-3-24px);
+    color: #000;
+    font-weight: 900;
+    margin: .6em;
+}
+
+.vote-box button {
+    width: 15vw;
+    height:5vw;
+    border-radius: 25px;
+    border: none;
+    font-size: var(--step-0-24px);
+    justify-content: center;
+    align-items: center;
+}
+
+.vote-box .vote {
+    background-color: #000;
+    color:#ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
+.vote-box .learn {
+    background-color: #828282;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
 }
