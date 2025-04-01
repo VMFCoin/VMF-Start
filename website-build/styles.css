@@ -121,18 +121,35 @@ body {
 }
 
 
+.navigation ul {
+    padding-inline-start: 0;
+    background-color: #bb133dad;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
 .navigation li {
     list-style: none;
     text-align: center;
     border-radius: 15px;
-    padding: .5rem;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.navigation li:hover {
+    transform: scale(1.05);
 }
 
 .navigation a:link {
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -149,11 +166,6 @@ body {
 .navigation a:focus {
     outline: none;
     text-decoration: underline;
-}
-
-.navigation ul {
-    padding-inline-start: 0;
-    background-color: #bb133dad;
 }
 
 .section-one {
@@ -176,15 +188,20 @@ body {
 .buy-now {
     position: sticky;
     top: 350px;
-    left:30px;
+    left: 30px;
     z-index: 9999;
     border: double 8px #07254bc4;
     font-weight: 900;
-    width: 100px;
+    width: 150px;
     border-radius: 20px;
     padding: 5px;
     background-color: #0a3161;
     color: #a7a6a6;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .memoriam {
@@ -477,10 +494,25 @@ body {
     border-radius: 10px;
     opacity: 0;
     width: 90%;  
-    max-height: none; 
+    max-height: 80%;
     text-align: center;
     transition: opacity 0.3s ease;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.partner-text h4 {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+}
+
+.partner-description {
+    text-align: center;
+    line-height: 1.5;
 }
 
 .partner:hover .partner-text {
