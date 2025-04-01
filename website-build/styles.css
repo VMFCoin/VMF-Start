@@ -195,20 +195,20 @@ body {
     top: 350px;
     left: 8.1em;
     z-index: 9999;
-    border: double 8px #07254bc4;
+    border: double 8px #bb133d;
     font-weight: 900;
     width: 100px;
     height: 100px;
     border-radius: 20px;
     padding: 0;
-    background-color: #0a3161;
-    color: #a7a6a6;
+    background-color: #ffffff;
+    color: #0a3161;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.2;
 }
 
@@ -346,7 +346,7 @@ body {
         left: 2rem;
         width: 80px;
         height: 80px;
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
