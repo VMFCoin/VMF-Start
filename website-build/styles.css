@@ -109,8 +109,8 @@ body {
 
 .logo {
     background-image: url("images/logo.png");
-    background-size:     cover;                     
-    background-repeat:   no-repeat;
+    background-size: cover;                     
+    background-repeat: no-repeat;
     background-position: center center;
     height: 10vh;
     width: 10vh;
@@ -118,6 +118,7 @@ body {
     border: none;
     margin: 1vh;
     cursor: pointer;
+    transform: scaleX(-1);
 }
 
 
@@ -193,7 +194,7 @@ body {
 }
 
 .section-one > * {
-    transform: scaleX(-1);
+    /* transform: scaleX(-1); */
 }
 
 .body .inter {
