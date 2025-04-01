@@ -126,17 +126,22 @@ body {
     padding-inline-start: 0;
     background-color: #bb133dad;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
     padding: 1rem;
+    margin: 0;
+    width: 100%;
 }
 
 .navigation li {
     list-style: none;
     text-align: center;
     border-radius: 15px;
-    padding: 1rem;
+    padding: 0.8rem;
     transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navigation li:hover {
@@ -146,11 +151,13 @@ body {
 .navigation a:link {
     text-decoration: none;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     display: block;
     width: 100%;
     height: 100%;
+    text-align: center;
+    white-space: nowrap;
 }
 
 
@@ -191,6 +198,9 @@ body {
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .section-one > * {
@@ -364,6 +374,11 @@ body {
         width: 80px;
         height: 80px;
         font-size: 16px;
+    }
+
+    .section-one-text {
+        font-size: 28px;
+        bottom: 15px;
     }
 }
 
@@ -746,4 +761,15 @@ h3 {
     color: #ffffff;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 875px) {
+    .navigation ul {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .navigation a:link {
+        font-size: 18px;
+    }
 }
