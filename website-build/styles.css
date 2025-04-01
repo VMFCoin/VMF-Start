@@ -193,12 +193,12 @@ body {
 .buy-now {
     position: sticky;
     top: 350px;
-    left: 30px;
+    left: 8.1em;
     z-index: 9999;
     border: double 8px #07254bc4;
     font-weight: 900;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 20px;
     padding: 0;
     background-color: #0a3161;
@@ -208,7 +208,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
 }
 
@@ -340,6 +340,13 @@ body {
 
     .memoriam-name {
         bottom: 15px;
+    }
+
+    .buy-now {
+        left: 2rem;
+        width: 80px;
+        height: 80px;
+        font-size: 12px;
     }
 }
 
