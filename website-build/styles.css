@@ -175,6 +175,11 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
+    transform: scaleX(-1);
+}
+
+.section-one > * {
+    transform: scaleX(-1);
 }
 
 .body .inter {
