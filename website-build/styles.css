@@ -207,7 +207,7 @@ body {
 .buy-now {
     position: sticky;
     top: 350px;
-    left: 8.1em;
+    left: 2rem;
     z-index: 9999;
     border: double 8px #bb133d;
     font-weight: 900;
@@ -224,6 +224,8 @@ body {
     cursor: pointer;
     font-size: 18px;
     line-height: 1.2;
+    box-shadow: 0 0 10px rgba(187, 19, 61, 0.3);
+    backdrop-filter: blur(1px);
 }
 
 .memoriam {
@@ -357,7 +359,7 @@ body {
     }
 
     .buy-now {
-        left: 2rem;
+        left: 1rem;
         width: 80px;
         height: 80px;
         font-size: 16px;
