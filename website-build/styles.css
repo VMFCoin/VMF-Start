@@ -134,6 +134,7 @@ body {
     width: 100%;
     z-index: 1000;
     background-color: #bb133dad;
+    backdrop-filter: blur(10px);
 }
 
 .navigation ul {
@@ -201,6 +202,7 @@ body {
     width: 100%;
     z-index: 1;
     padding: 0 20px;
+    margin-top: 60px;
 }
 
 .motto {
@@ -327,6 +329,7 @@ body {
 @media (max-width: 768px) {
     .section-one-text {
         font-size: 36px;
+        margin-top: 60px;
     }
 
     .motto {
@@ -344,6 +347,7 @@ body {
 @media (max-width: 480px) {
     .section-one-text {
         font-size: 28px;
+        margin-top: 60px;
     }
 
     .motto {
