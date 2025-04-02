@@ -207,6 +207,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    transform: scaleX(-1);
+}
+
+.section-one > * {
+    transform: scaleX(-1);
 }
 
 .section-one-text {
