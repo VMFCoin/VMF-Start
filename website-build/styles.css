@@ -135,9 +135,9 @@ body {
     grid-template-columns: repeat(7, 1fr);
     gap: 2rem;
     list-style: none;
-    width: 200%;
+    width: 150%;
     margin-left: 10vh;
-    background-color: #0a3161;
+    background-color: rgba(187, 19, 61, 0.5);
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
