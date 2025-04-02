@@ -43,6 +43,11 @@
         display: grid;
         grid-template-columns: repeat(6, 1fr);
     }
+    /* Specific style for donate-to-dev-team page */
+    .donate-to-dev-team .navigation ul {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
+    }
     .section-two {
         margin-left: 10rem;
         margin-right: 10rem;
