@@ -767,9 +767,9 @@ h3 {
 }
 
 .vote, .learn {
-    background-color: #bb133d;
+    background-color: #0a3161;
     color: #ffffff;
-    border: 2px solid #bb133d;
+    border: 2px solid #0a3161;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -782,7 +782,7 @@ h3 {
 
 .vote:hover, .learn:hover {
     background-color: transparent;
-    color: #bb133d;
+    color: #0a3161;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
