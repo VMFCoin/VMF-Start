@@ -760,7 +760,7 @@ h3 {
 
 .vote-box p {
     color: #ffffff;
-    font-size: 1.44rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -769,22 +769,19 @@ h3 {
     background-color: #bb133d;
     color: #ffffff;
     border: 2px solid #bb133d;
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1.44rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
-    width: 120%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .vote:hover, .learn:hover {
-    background-color: #bb133d;
-    color: #ffffff;
+    background-color: transparent;
+    color: #bb133d;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
