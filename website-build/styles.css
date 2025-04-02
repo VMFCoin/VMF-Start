@@ -139,7 +139,13 @@ body {
     padding: 0.8rem;
     margin: 0;
     width: 100%;
-    margin-right: 10vh;
+    margin-right: 0;
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .navigation li {
@@ -151,6 +157,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .navigation li:hover {
@@ -169,6 +176,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 0 0.5rem;
 }
 
 
@@ -394,7 +402,7 @@ body {
     }
 
     .navigation ul {
-        margin-right: 8vh;
+        margin-right: 0;
     }
     
     .logo {
