@@ -717,3 +717,41 @@ h3 {
     z-index: 1;
     padding: 0 20px;
 }
+
+.partner-content {
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 2rem;
+}
+
+.partner-subtitle {
+    font-family: "Inter";
+    font-size: 24px;
+    color: #0a3161;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.partner-content p {
+    font-family: "Inter";
+    font-size: 28px;
+    color: #a7a6a6;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .partner-content {
+        padding: 0 1rem;
+    }
+
+    .partner-content p {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-content p {
+        font-size: 20px;
+    }
+}
