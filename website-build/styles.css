@@ -170,6 +170,8 @@ body {
 }
 
 .section-one-text {
+    font-family: "Inter";
+    font-weight: 900;
     font-size: 48px;
     color: white;
     text-align: center;
