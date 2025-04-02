@@ -125,25 +125,25 @@ body {
     margin: 0;
     cursor: pointer;
     position: absolute;
-    left: 0;
+    right: 1rem;
     top: 0;
     z-index: 10;
 }
 
 .navigation ul {
     padding-inline-start: 0;
-    background-color: #bb133dad;
+    background-color: #bb133d;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.3rem;
     padding: 0.8rem;
     margin: 0;
     width: 100%;
-    margin-left: 10vh;
 }
 
 .navigation {
     width: 100%;
+    position: relative;
 }
 
 .navigation li {
@@ -394,12 +394,13 @@ body {
     }
 
     .navigation ul {
-        margin-left: 8vh;
+        margin-left: 0;
     }
     
     .logo {
         height: 8vh;
         width: 8vh;
+        right: 0.8rem;
     }
 }
 
