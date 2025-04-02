@@ -109,8 +109,8 @@ body {
 
 .logo {
     background-image: url("images/logo.png");
-    background-size:     cover;                     
-    background-repeat:   no-repeat;
+    background-size: cover;                     
+    background-repeat: no-repeat;
     background-position: center center;
     height: 8vh;
     width: 8vh;
@@ -118,7 +118,9 @@ body {
     border: none;
     margin: 1vh;
     cursor: pointer;
-    position: relative;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
     z-index: 1001;
 }
 
@@ -128,15 +130,16 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
+    background-color: #bb133dad;
 }
 
 .navigation ul {
     padding-inline-start: 0;
-    background-color: #bb133dad;
     margin: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding: 0.5rem;
 }
 
 .navigation li {
@@ -151,7 +154,7 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 900;
 }
 
 
@@ -171,7 +174,7 @@ body {
 }
 
 .section-one {
-    margin-top: 10vh;
+    margin-top: 0;
     background-image: var(--background-image);
     height: 45vh;
     background-size: cover;                     
@@ -707,5 +710,9 @@ h3 {
     .navigation li {
         width: 100%;
         margin: 0.5rem 0;
+    }
+
+    .logo {
+        right: 4rem;
     }
 }
