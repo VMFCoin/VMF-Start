@@ -689,3 +689,12 @@ h3 {
         font-size: 20px;
     }
 }
+
+.section-two img {
+    height: 20vw;
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
