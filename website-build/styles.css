@@ -743,12 +743,26 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .vote-header img {
     width: 60px;
     height: 60px;
     object-fit: contain;
+    position: relative;
+    z-index: 3;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.vote {
+    background-color: #bb133d;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 .vote-box {
