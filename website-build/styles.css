@@ -716,3 +716,12 @@ h3 {
         right: 4rem;
     }
 }
+
+.inter {
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: 48px;
+    text-align: left;
+    letter-spacing: normal;
+    color: #0a3161;
+}
