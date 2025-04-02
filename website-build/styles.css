@@ -912,7 +912,8 @@ h3 {
 }
 
 /* Specific style for index page */
-.index .navigation ul {
+.index .navigation ul,
+.index-navigation ul {
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
     justify-content: space-between;
