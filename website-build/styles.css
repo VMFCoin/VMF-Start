@@ -163,18 +163,19 @@ body {
 
 
 .navigation a:visited {
-    color: #000000;
+    color: #ffffff;
 }
 
 
 .navigation a:hover {
-    color: azure;
+    color: #a7a6a6;
 }
 
 
 .navigation a:focus {
     outline: none;
     text-decoration: underline;
+    color: #ffffff;
 }
 
 .section-one {
