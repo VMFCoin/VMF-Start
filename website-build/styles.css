@@ -200,7 +200,7 @@ body {
 .section-one-text {
     font-family: "Inter";
     font-weight: 900;
-    font-size: 60px;
+    font-size: clamp(36px, 4vw, 60px);
     color: white;
     text-align: center;
     position: absolute;
@@ -334,7 +334,7 @@ body {
 
 @media (max-width: 768px) {
     .section-one-text {
-        font-size: 36px;
+        font-size: clamp(32px, 5vw, 48px);
         margin-top: 60px;
     }
 
@@ -352,7 +352,7 @@ body {
 
 @media (max-width: 480px) {
     .section-one-text {
-        font-size: 28px;
+        font-size: clamp(28px, 6vw, 36px);
         margin-top: 60px;
     }
 
