@@ -46,7 +46,9 @@
     /* Specific style for donate-to-dev-team page */
     .donate-to-dev-team .navigation ul {
         grid-template-columns: repeat(6, 1fr);
-        gap: 1rem;
+        gap: 2rem;
+        justify-content: space-between;
+        padding: 0 2rem;
     }
     .section-two {
         margin-left: 10rem;
