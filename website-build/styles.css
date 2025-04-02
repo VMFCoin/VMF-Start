@@ -385,10 +385,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
     gap: 2em;
-    height: 1100px;
+    height: auto;
+    min-height: 1100px;
     color: #062863;
     border-radius: 30px;
-    padding: 1rem;
+    padding: 2rem;
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
@@ -403,13 +404,12 @@ body {
     justify-content: center;
     position: relative;
     padding: 0rem;
-    height: auto;  
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 300px;
     width: 300px;
     margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .partner-title {
@@ -427,12 +427,10 @@ body {
 }
 
 .partner img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    max-height: 300px;
-    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .partner:hover img {
@@ -449,8 +447,7 @@ body {
     padding: 1rem;
     border-radius: 10px;
     opacity: 0;
-    width: 90%;  
-    max-height: none; 
+    width: 90%;
     text-align: center;
     transition: opacity 0.3s ease;
     z-index: 2;
@@ -480,38 +477,24 @@ body {
     transform: translateX(-50%);
     color: #000;
     z-index: 3;
-    opacity: 1;  
-    transition: opacity 0.3s ease; 
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-
 .partner:hover .partner-name {
-    opacity: 0; 
+    opacity: 0;
 }
 
 @media (max-width: 768px) {
     .partner-contents {
-        margin-left: 2rem;
-        margin-right: 2rem;
         grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5em;
     }
 
     .partner {
-        text-align: left;
-    }
-
-    .partner img {
-        max-height: 200px;
-    }
-
-    .partner-name {
-        bottom: 15px;
-        background-color: #a7a6a6;
-        text-align: center;
-        border-radius: 25px;
-    }
-    .body h1 {
-        font-size: var(--step--1);
+        width: 100%;
+        max-width: 300px;
     }
 }
 
