@@ -133,12 +133,12 @@ body {
 .navigation ul {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     list-style: none;
     width: 150%;
     margin-left: 10vh;
     background-color: rgba(187, 19, 61, 0.5);
-    padding: 1rem;
+    padding: 0.8rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -167,7 +167,7 @@ body {
 .navigation a:link {
     text-decoration: none;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     display: block;
     width: 100%;
@@ -175,6 +175,7 @@ body {
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
@@ -795,7 +796,7 @@ h3 {
     }
     
     .navigation a:link {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
