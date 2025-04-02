@@ -116,11 +116,11 @@ body {
     width: 10vh;
     border-radius: 50px;
     border: none;
-    margin: 1vh;
+    margin: 0;
     cursor: pointer;
     position: absolute;
     left: 0;
-    top: 1rem;
+    top: 0;
     z-index: 10;
 }
 
@@ -134,11 +134,12 @@ body {
     padding-inline-start: 0;
     background-color: #bb133dad;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 0.3rem;
     padding: 0.8rem;
     margin: 0;
     width: 100%;
+    margin-left: 10vh;
 }
 
 .navigation li {
@@ -392,11 +393,13 @@ body {
         bottom: 15px;
     }
 
+    .navigation ul {
+        margin-left: 8vh;
+    }
+    
     .logo {
         height: 8vh;
         width: 8vh;
-        left: 0;
-        top: 0.8rem;
     }
 }
 
