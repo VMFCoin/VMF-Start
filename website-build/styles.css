@@ -46,8 +46,9 @@
         justify-content: space-evenly;
         padding: 0 2rem;
     }
-    /* Specific style for donate-to-dev-team page */
-    .donate-to-dev-team .navigation ul {
+    /* Specific style for donate-to-dev-team page and partners page */
+    .donate-to-dev-team .navigation ul,
+    .partners .navigation ul {
         grid-template-columns: repeat(6, 1fr);
         gap: 3rem;
         justify-content: space-evenly;
