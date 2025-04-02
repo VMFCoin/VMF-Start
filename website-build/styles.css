@@ -163,6 +163,9 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .body .inter {
@@ -198,11 +201,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .memoriam-contents {
-    margin-left: 8rem;
-    margin-right: 8rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
     background-color: #0a3161c0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -298,23 +303,28 @@ body {
 
 @media (max-width: 768px) {
     .memoriam-contents {
-        margin-left: 2rem;
-        margin-right: 2rem;
+        width: 95%;
         grid-template-columns: 1fr;
+        height: auto;
+        min-height: 500px;
     }
 
-    .memoriam-one,
-    .memoriam-two {
-        text-align: left;
+    .section-one-text {
+        font-size: 36px;
     }
 
-    .memoriam-one img,
-    .memoriam-two img {
-        max-height: 200px;
+    .motto {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-one-text {
+        font-size: 28px;
     }
 
-    .memoriam-name {
-        bottom: 15px;
+    .motto {
+        font-size: 32px;
     }
 }
 
@@ -357,6 +367,9 @@ body {
     text-align: center;
     font-size: 60px;
     color: #0a3161;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
 }
 
 /*Home Page Styling*/
@@ -702,4 +715,5 @@ h3 {
     bottom: 20px;
     width: 100%;
     z-index: 1;
+    padding: 0 20px;
 }
