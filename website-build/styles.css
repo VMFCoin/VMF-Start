@@ -366,38 +366,21 @@ body {
 }
 
 .partner-contents {
-    /*background-image: url("./images/us-flag-3838582_1920.jpg");*/
-    background-size: cover;                     
-    background-repeat: no-repeat;
-    background-position: center center;   
-    padding-top: 3rem;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.partner-contents {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     text-align: center;
-    gap: 1em;
+    gap: 2em;
     height: 1100px;
     color: #062863;
     border-radius: 30px;
     padding: 1rem;
     position: relative;
-}
-
-.grid-row-span-2 {
-    grid-column: span 2;
-    font-size: 40px;
-    margin-block-start: 0;
-    margin-block-end: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .partner {
-    border: solid #bb133d 6px;
+    border: solid #bb133d 6.48px;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -411,6 +394,16 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 300px;
     width: 300px;
+    margin: 0 auto;
+}
+
+.partner-title {
+    font-family: "Army-Rust";
+    font-size: 60px;
+    color: #0a3161;
+    text-align: center;
+    margin-bottom: 2rem;
+    white-space: nowrap;
 }
 
 .partner:hover {
