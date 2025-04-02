@@ -41,7 +41,10 @@
     }
     .navigation ul{
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1rem;
+        justify-content: space-evenly;
+        padding: 0 2rem;
     }
     /* Specific style for donate-to-dev-team page */
     .donate-to-dev-team .navigation ul {
