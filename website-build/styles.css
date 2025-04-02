@@ -739,49 +739,38 @@ h3 {
 }
 
 .vote-box {
-    border: solid #062863 6px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 40vw;
-    margin: auto;
-    gap: 0rem;
-    border-radius: 20px;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .vote-box p {
-    grid-column: 1 / 3;
-    font-size: var(--step-3-24px);
-    color: #000;
-    font-weight: 900;
-    margin: .6em;
-}
-
-.vote-box button {
-    width: 15vw;
-    height:5vw;
-    border-radius: 25px;
-    border: none;
-    font-size: var(--step-0-24px);
-    justify-content: center;
-    align-items: center;
-}
-
-.vote-box .vote {
-    background-color: #000;
-    color:#ffffff;
-    justify-content: center;
-    align-items: center;
-}
-
-.vote-box .learn {
-    background-color: #828282;
     color: #ffffff;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vote, .learn {
+    background-color: #bb133d;
+    color: #ffffff;
+    border: 2px solid #bb133d;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.vote:hover, .learn:hover {
+    background-color: transparent;
+    color: #bb133d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 875px) {
