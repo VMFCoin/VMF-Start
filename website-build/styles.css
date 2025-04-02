@@ -361,15 +361,34 @@ body {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-items: center;
+}
+
+.footer-links li {
+    text-align: center;
+    width: 100%;
 }
 
 .footer-links a {
     text-decoration: none;
     color: #a7a6a6;
+    display: block;
+    padding: 0.5rem;
 }
 
 .footer-links a:hover {
     color: azure;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
 }
 
 .socials img{
