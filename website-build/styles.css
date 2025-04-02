@@ -166,6 +166,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .body .inter {
@@ -202,6 +203,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .memoriam-contents {
