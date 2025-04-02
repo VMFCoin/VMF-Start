@@ -830,3 +830,59 @@ h3 {
         left: 15px;
     }
 }
+
+/* Specific style for rewards page */
+.rewards .navigation ul {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.rewards .section-two {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    font-size: var(--step-0-24px);
+}
+
+.rewards .partner-contents {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.rewards .partner {
+    background-color: #0a3161c0;
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+}
+
+.rewards .partner-text {
+    margin-bottom: 1rem;
+}
+
+.rewards .partner-text h4 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.rewards .partner-description {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.rewards .section-three,
+.rewards .section-four,
+.rewards .section-five {
+    margin: 4rem 10rem;
+    color: #828282;
+}
+
+.rewards h3 {
+    color: #0a3161;
+    font-size: 36px;
+    margin-bottom: 2rem;
+}
