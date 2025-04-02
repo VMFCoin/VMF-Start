@@ -135,7 +135,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
     list-style: none;
-    width: 150%;
+    width: 110%;
     margin-left: 10vh;
     background-color: rgba(187, 19, 61, 0.5);
     padding: 0.8rem;
@@ -781,9 +781,9 @@ h3 {
 }
 
 .vote, .learn {
-    background-color: rgba(187, 19, 61, 0.5);
-    color: #ffffff;
-    border: 2px solid #bb133d;
+    background-color: #ffffff;
+    color: #0a3161;
+    border: 2px solid #d40000;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
