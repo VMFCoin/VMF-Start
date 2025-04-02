@@ -455,8 +455,12 @@ body {
 }
 
 .section-two h1 {
-    font-size: 35px;
-    color: #0a3161;
+    color: #bb133d;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .section-two img{
@@ -678,9 +682,15 @@ body {
     text-align: right;
 }
 
-.section-two h3{
-    font-size: 30px;
+.section-two h3 {
+    color: #bb133d;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
 }
+
 .section-four h3 {
     font-size: 48px;
     margin-block-end: 0;
