@@ -115,7 +115,7 @@ body {
 
 .logo {
     background-image: url("images/logo.png");
-    background-size: cover;                     
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
     height: 10vh;
@@ -285,6 +285,9 @@ body {
 
 .grid-row-span-2 {
     grid-column: span 2;
+    font-size: 48px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .memoriam-one,
@@ -309,12 +312,10 @@ body {
 
 .memoriam-one img,
 .memoriam-two img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    max-height: 300px;
-    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .memoriam-one:hover img,
@@ -429,6 +430,7 @@ body {
 }
 
 .socials img{
+    width: 16px;
     height: 16px;
 }
 
@@ -439,6 +441,7 @@ body {
 }
 
 .socials .bluesky img{
+    width: 24px;
     height: 24px;
 }
 
@@ -451,11 +454,11 @@ body {
 /*Home Page Styling*/
 
 .heli {
-    height: 30vw;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
     display: block;
-    margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem auto;
 }
 
 .section-two h1 {
@@ -473,11 +476,11 @@ body {
 }
 
 .salute {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
     display: block;
-    margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 70vw;
+    margin: 2rem auto;
 }
 
 .text-image-box strong{
@@ -517,13 +520,6 @@ body {
     position: relative;
 }
 
-.grid-row-span-2 {
-    grid-column: span 2;
-    font-size: 40px;
-    margin-block-start: 0;
-    margin-block-end: 0;
-}
-
 .partner {
     border: solid #bb133d 6px;
     border-radius: 25px;
@@ -547,12 +543,10 @@ body {
 }
 
 .partner img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    max-height: 300px;
-    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .partner:hover img {
@@ -674,12 +668,11 @@ body {
 }
 
 .section-three img {
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin: 2rem auto;
 }
 
 .right {
@@ -749,7 +742,9 @@ h3 {
 }
 
 .vote-header img {
+    width: 60px;
     height: 60px;
+    object-fit: contain;
 }
 
 .vote-box {
@@ -796,4 +791,33 @@ h3 {
     .navigation a:link {
         font-size: 16px;
     }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .heli {
+        max-width: 100%;
+    }
+    
+    .salute {
+        max-width: 100%;
+    }
+    
+    .section-three img {
+        max-width: 100%;
+    }
+    
+    .partner img,
+    .memoriam-one img,
+    .memoriam-two img {
+        max-height: 200px;
+    }
+}
+
+/* Universal image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
