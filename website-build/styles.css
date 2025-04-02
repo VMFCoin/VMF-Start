@@ -757,7 +757,7 @@ h3 {
 }
 
 .vote {
-    background-color: #bb133d;
+    background-color: rgba(187, 19, 61, 0.5);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -781,9 +781,9 @@ h3 {
 }
 
 .vote, .learn {
-    background-color: #0a3161;
+    background-color: rgba(187, 19, 61, 0.5);
     color: #ffffff;
-    border: 2px solid #0a3161;
+    border: 2px solid #bb133d;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -796,7 +796,7 @@ h3 {
 
 .vote:hover, .learn:hover {
     background-color: transparent;
-    color: #0a3161;
+    color: #bb133d;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
