@@ -130,23 +130,24 @@ body {
     z-index: 10;
 }
 
-.navigation ul {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 1rem;
-    list-style: none;
-    width: 110%;
-    margin-left: 10vh;
-    background-color: rgba(187, 19, 61, 0.5);
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.navigation {
+    width: 85%;
+    margin-left: 0;
+    background-color: #bb133d;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 100;
 }
 
-.navigation {
-    width: 100%;
-    position: relative;
-
+.navigation ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .navigation li {
@@ -400,8 +401,14 @@ body {
         font-size: 40px;
     }
 
-    .navigation ul {
+    .navigation {
+        width: 100%;
         margin-left: 0;
+    }
+    
+    .navigation ul {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
     }
     
     .logo {
