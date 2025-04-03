@@ -435,8 +435,9 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 3rem;
     font-family: "Inter";
     font-size: 18px;
     line-height: 1.4;
@@ -447,12 +448,15 @@
     display: block;
     margin-bottom: 0;
     line-height: 1;
+    text-align: center;
+    font-size: 24px;
 }
 
 .memoriam-description {
     display: block;
     margin-top: 0.5rem;
     line-height: 1.4;
+    text-align: center;
 }
 
 /* Ensure consistent text styling across all pages */
