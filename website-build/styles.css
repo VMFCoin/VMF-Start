@@ -335,7 +335,7 @@
 }
 
 .memoriam-contents {
-    width: 90%;
+    width: 67.5%;
     margin: -20px auto 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -346,7 +346,7 @@
     color: white;
     border-radius: 30px;
     position: relative;
-    max-width: 1200px;
+    max-width: 900px;
     padding: 2rem;
 }
 
@@ -456,7 +456,7 @@
     }
 
     .memoriam-contents {
-        width: 95%;
+        width: 71.25%;
         height: auto;
         min-height: 500px;
         grid-template-columns: 1fr;
