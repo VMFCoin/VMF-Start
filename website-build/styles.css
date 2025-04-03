@@ -712,11 +712,15 @@ h3 {
     background-color: #0a3161;
     color: #ffffff;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 8px rgba(10, 49, 97, 0.3);
 }
 
 .vote-box button:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(10, 49, 97, 0.4);
+    backdrop-filter: blur(6px);
 }
 
 .vote-box .vote {
