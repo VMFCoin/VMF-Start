@@ -484,6 +484,7 @@ body {
 }
 
 .partner-title {
+    font-family: "Army-Rust";
     font-size: 54px;
     color: #454B1B;
     text-align: center;
@@ -587,6 +588,7 @@ body {
 }
 
 .section-three h3 {
+    font-family: "Army-Rust";
     font-size: 54px;
     color: #454B1B;
     text-align: center;
@@ -620,12 +622,14 @@ body {
 }
 
 .section-two h3 {
+    font-family: "Army-Rust";
     font-size: 54px;
     color: #454B1B;
     text-align: center;
 }
 
 .section-four h3 {
+    font-family: "Army-Rust";
     font-size: 54px;
     color: #454B1B;
     text-align: center;
@@ -641,6 +645,7 @@ body {
 }
 
 .section-five h3 {
+    font-family: "Army-Rust";
     font-size: 54px;
     color: #454B1B;
     text-align: center;
@@ -656,6 +661,7 @@ body {
 }
 
 h3 {
+    font-family: "Army-Rust";
     font-size: 54px;
     color: #454B1B;
     text-align: center;
@@ -858,6 +864,7 @@ h3 {
     margin: 0;
     font-size: 36px;
     color: #454B1B;
+    font-family: "Army-Rust";
 }
 
 .buy-now:hover {
