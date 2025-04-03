@@ -295,6 +295,12 @@ body {
     grid-column: span 2;
     font-size: 48px;
     margin-bottom: 2rem;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .memoriam-one,
