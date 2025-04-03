@@ -265,8 +265,8 @@ body {
     background-size: cover;                     
     background-repeat: no-repeat;
     background-position: center center; 
-    height: 500px;  
-    padding-top: 2rem;
+    height: 600px;  
+    padding-top: 3rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -284,10 +284,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     gap: 1em;
-    height: 350px;
+    height: 500px;
     color: white;
     border-radius: 30px;
-    padding: 0.5rem;
+    padding: 2rem;
     position: relative;
 }
 
@@ -394,8 +394,7 @@ body {
         width: 95%;
         grid-template-columns: 1fr;
         height: auto;
-        min-height: 350px;
-        padding: 0.5rem;
+        min-height: 500px;
     }
 }
 
