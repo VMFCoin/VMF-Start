@@ -429,7 +429,7 @@
     font-weight: bold;
     margin: 0.5rem 0;
     position: absolute;
-    bottom: -10px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
