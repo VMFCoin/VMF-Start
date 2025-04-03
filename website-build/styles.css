@@ -1067,6 +1067,14 @@ h3 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.partners .partner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+    margin: 0;
+}
+
 @media (max-width: 1200px) {
     .partners .partner-contents {
         grid-template-columns: repeat(2, 1fr);
