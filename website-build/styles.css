@@ -45,22 +45,24 @@
     .navigation ul{
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 2rem;
+        gap: 1rem;
         justify-content: space-between;
         padding: 0.5rem 2rem;
         width: 100%;
-        max-width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
     }
     /* Specific style for donate-to-dev-team page and partners page */
     .donate-to-dev-team .navigation ul,
     .partners .navigation ul,
     .about .navigation ul {
         grid-template-columns: repeat(6, 1fr);
-        gap: 2rem;
+        gap: 1rem;
         justify-content: space-between;
         padding: 0.5rem 2rem;
         width: 100%;
-        max-width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
     }
     .section-two {
         margin-left: 10rem;
@@ -164,25 +166,24 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    margin: 0 auto;
     z-index: 1000;
     background-color: #bb133dad;
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    max-width: 100%;
+    align-items: center;
 }
 
 .navigation ul {
     padding-inline-start: 0;
-    margin: 0;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .navigation li {
@@ -908,11 +909,19 @@ h3 {
 }
 
 /* Specific style for rewards page */
-.rewards .navigation ul {
-    grid-template-columns: repeat(7, 1fr);
+.rewards .navigation ul,
+.index .navigation ul,
+.index-navigation ul,
+.donate-to-dev-team .navigation ul,
+.partners .navigation ul,
+.about .navigation ul {
+    grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .rewards .section-two {
@@ -1004,7 +1013,10 @@ h3 {
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Specific style for rewards page and index page */
@@ -1014,9 +1026,9 @@ h3 {
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
     justify-content: space-between;
-    padding: 0 2rem;
-    max-width: 1400px;
+    padding: 0.5rem 2rem;
     width: 100%;
+    max-width: 1400px;
 }
 
 /* Specific style for donate-to-dev-team page and partners page */
@@ -1024,11 +1036,12 @@ h3 {
 .partners .navigation ul,
 .about .navigation ul {
     grid-template-columns: repeat(6, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
