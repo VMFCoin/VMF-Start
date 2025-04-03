@@ -49,7 +49,7 @@
         justify-content: space-between;
         padding: 0.5rem 2rem;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
     }
     /* Specific style for donate-to-dev-team page and partners page */
@@ -61,7 +61,7 @@
         justify-content: space-between;
         padding: 0.5rem 2rem;
         width: 100%;
-        max-width: 1400px;
+        max-width: 1200px;
         margin: 0 auto;
     }
     .section-two {
@@ -69,10 +69,17 @@
         margin-right: 5rem;
         font-size: var(--step-0-24px);
     }
+    .index .navigation ul,
+    .index-navigation ul {
+        grid-template-columns: repeat(7, 1fr);
+    }
 }
     
 @media(max-width: 875px) {
-
+    .navigation {
+        width: 100%;
+        max-width: 100%;
+    }
     .primary-navigation {
         position: fixed;
         inset: 0 0 0 30%;
@@ -185,6 +192,7 @@ body {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
+    max-width: 1200px;
 }
 
 .navigation li {
@@ -281,6 +289,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
 }
 
 .memoriam-contents {
@@ -499,6 +508,7 @@ body {
     gap: 2rem;
     justify-content: center;
     padding: 2rem;
+    max-width: 1200px;
 }
 
 .partner {
@@ -923,7 +933,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1018,7 +1028,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1031,7 +1041,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 /* Specific style for donate-to-dev-team page and partners page */
@@ -1043,7 +1053,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1080,7 +1090,7 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     justify-content: center;
     width: 90%;
