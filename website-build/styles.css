@@ -30,6 +30,11 @@
     src: url("./fonts/ARMY_RUST.ttf");
 }
 
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter-VariableFont_opsz\,wght.ttf");
+}
+
 * {
     box-sizing: border-box;
 }
@@ -53,7 +58,7 @@
         margin: 0;
     }
     /* Specific style for donate-to-dev-team page and partners page */
-    .donate-to-dev-team .navigation ul,
+   /* .donate-to-dev-team .navigation ul,
     .partners .navigation ul,
     .about .navigation ul {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -63,7 +68,7 @@
         width: 100%;
         max-width: 1200px;
         margin: 0;
-    }
+    }*/
     .section-two {
         margin-left: 10rem;
         margin-right: 5rem;
@@ -76,10 +81,10 @@
 }
     
 @media(max-width: 875px) {
-    .navigation {
+    /*.navigation {
         width: 100%;
         max-width: 1400px;
-    }
+    }*/
     .primary-navigation {
         position: fixed;
         inset: 0 30% 0 0;
@@ -147,6 +152,7 @@
 }    
 .body {
     font-family: "Inter";
+    font: "Inter";
     margin: 0;
     color: #828282;
     font-size: var(--step-0-24px);
@@ -161,15 +167,19 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: calc(160px + 2rem); /* Space for buy button plus some margin */
+    padding-left: calc(160px + 2rem); /* Space for buy button plus some margin*/ 
     padding-right: 2rem;
 }
 
 .partner-content,
-.partner-contents,
-.partner-title {
-    padding-left: 2rem !important;
+.partner-contents {
+    padding-left: calc(160px + 2rem); 
     padding-right: 2rem !important;
+}
+
+.partner-content h1 {
+    margin-block-end: 0;
+    margin-block-start: 0;
 }
 
 @media (max-width: 768px) {
@@ -179,8 +189,8 @@
     }
     
     .partner-content,
-    .partner-contents,
-    .partner-title {
+    .partner-contents
+     {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
     }
@@ -232,7 +242,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: calc(8vh + 2rem);
 }
 
 .navigation ul {
@@ -328,7 +337,9 @@
     color: #0a3161;
     width: 100%;
     padding: 0 20px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .memoriam {
@@ -576,7 +587,7 @@
 .charity-intro {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+   
     max-width: 1400px;
     position: relative;
     z-index: 1;
@@ -603,7 +614,7 @@
 
 .partner {
     background-color: white;
-    border: 2px solid #bb133d;
+    border: .375rem solid #bb133d;
     border-radius: 30px;
     padding: 1rem;
     display: flex;
@@ -619,15 +630,11 @@
 
 .partner-title {
     font-family: "Army-Rust";
-    font-size: 54px;
+    font-size: 80px;
     color: #000000;
     text-align: center;
     width: 100%;
-    margin: 2rem auto;
-    padding: 0;
-    position: relative;
-    z-index: 2;
-    background-color: white;
+    padding: none;
 }
 
 .partner:hover {
@@ -668,6 +675,13 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+}
+
+.partner-text a {
+    font-style: none;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: larger;
 }
 
 .partner:hover .partner-text {
@@ -1030,7 +1044,7 @@ h3 {
 }
 
 /* Specific style for rewards page */
-.rewards .navigation ul,
+/*.rewards .navigation ul,
 .index .navigation ul,
 .index-navigation ul,
 .donate-to-dev-team .navigation ul,
@@ -1043,7 +1057,7 @@ h3 {
     width: 100%;
     max-width: 1200px;
     margin: 0;
-}
+}*/
 
 .rewards .section-two {
     margin-left: auto;
@@ -1112,8 +1126,7 @@ h3 {
 .charity-intro {
     margin-left: auto;
     margin-right: auto;
-    padding: 2rem 0;
-    padding-left: 160px;
+    padding-left: 2rem;
 }
 
 @media (max-width: 768px) {
@@ -1132,7 +1145,7 @@ h3 {
 }
 
 /* Specific style for index page */
-.index .navigation ul,
+/*.index .navigation ul,
 .index-navigation ul {
     grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
@@ -1144,7 +1157,7 @@ h3 {
 }
 
 /* Specific style for rewards page and index page */
-.rewards .navigation ul,
+/*.rewards .navigation ul,
 .index .navigation ul,
 .index-navigation ul {
     grid-template-columns: repeat(7, 1fr);
@@ -1156,7 +1169,7 @@ h3 {
 }
 
 /* Specific style for donate-to-dev-team page and partners page */
-.donate-to-dev-team .navigation ul,
+/*.donate-to-dev-team .navigation ul,
 .partners .navigation ul,
 .about .navigation ul {
     grid-template-columns: repeat(6, 1fr);
@@ -1166,7 +1179,7 @@ h3 {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-}
+}*/
 
 @media (max-width: 768px) {
     .section-two {
@@ -1265,4 +1278,35 @@ h3 {
     .partner-box {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+.img-break {
+    width: 100%;
+}
+
+.quote-one, .quote-two {
+    border: solid 8px #062863;
+    width: 30vw;
+    padding: 1rem;
+    border-radius: 20px;
+    color: #000;
+}
+
+.quote {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    justify-content: center;
+    margin: auto;
+}
+
+.section-img-text-wrap-left img {
+    height: auto;
+    max-height: 20vh;
+    width: auto;
+    max-width: 100%;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
