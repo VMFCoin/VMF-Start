@@ -455,6 +455,8 @@ body {
     padding: 2rem;
     max-width: 1400px;
     margin: 0 auto;
+    justify-content: center;
+    width: 90%;
 }
 
 .partner {
@@ -549,12 +551,14 @@ body {
 @media (max-width: 1200px) {
     .partner-contents {
         grid-template-columns: repeat(2, 1fr);
+        width: 90%;
     }
 }
 
 @media(max-width: 768px) {
     .partner-contents {
         grid-template-columns: 1fr;
+        width: 90%;
     }
 }
 
