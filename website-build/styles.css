@@ -459,10 +459,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     justify-content: center;
-    width: 90%;
+    width: 80%;
+    margin-left: 10rem;
 }
 
 .partner {
@@ -474,9 +475,9 @@ body {
     justify-content: center;
     position: relative;
     padding: 0;
-    height: min(300px, 80vw);
-    width: min(300px, 80vw);
-    margin: 0 auto;
+    height: min(250px, 70vw);
+    width: min(250px, 70vw);
+    margin: 0;
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -557,14 +558,16 @@ body {
 @media (max-width: 1200px) {
     .partner-contents {
         grid-template-columns: repeat(2, 1fr);
-        width: 90%;
+        width: 80%;
+        margin-left: 5rem;
     }
 }
 
 @media(max-width: 768px) {
     .partner-contents {
         grid-template-columns: 1fr;
-        width: 90%;
+        width: 80%;
+        margin-left: 2rem;
     }
 }
 
