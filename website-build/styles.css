@@ -443,6 +443,18 @@
     overflow-y: auto;
 }
 
+.memoriam-rank {
+    display: block;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.memoriam-description {
+    display: block;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
 /* Ensure consistent text styling across all pages */
 .about .memoriam-text,
 .index .memoriam-text,
