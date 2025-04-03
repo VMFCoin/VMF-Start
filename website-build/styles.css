@@ -354,20 +354,6 @@
     margin: 0;
 }
 
-/* Ensure consistent memoriam styling across all pages */
-.about .memoriam,
-.index .memoriam,
-.partners .memoriam,
-.rewards .memoriam,
-.donate-to-dev-team .memoriam {
-    background-image: url("./images/us-flag-3838582_1920.jpg");
-    background-size: cover;                     
-    background-repeat: no-repeat;
-    background-position: center center; 
-    height: 600px;  
-    padding-top: 3rem;
-}
-
 .memoriam-contents {
     width: 67.5%;
     margin: -20px auto 0;
@@ -384,45 +370,7 @@
     padding: 2rem;
 }
 
-/* Ensure consistent memoriam-contents styling across all pages */
-.about .memoriam-contents,
-.index .memoriam-contents,
-.partners .memoriam-contents,
-.rewards .memoriam-contents,
-.donate-to-dev-team .memoriam-contents {
-    width: 67.5%;
-    margin: -20px auto 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    background-color: #0a3161c0;
-    text-align: center;
-    height: 500px;
-    color: white;
-    border-radius: 30px;
-    position: relative;
-    max-width: 900px;
-    padding: 2rem;
-}
-
 .grid-row-span-2 {
-    grid-column: span 2;
-    font-size: 48px;
-    margin-bottom: 1.5rem;
-    text-shadow: 
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000,
-        2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Ensure consistent grid-row-span-2 styling across all pages */
-.about .grid-row-span-2,
-.index .grid-row-span-2,
-.partners .grid-row-span-2,
-.rewards .grid-row-span-2,
-.donate-to-dev-team .grid-row-span-2 {
     grid-column: span 2;
     font-size: 48px;
     margin-bottom: 1.5rem;
@@ -490,7 +438,7 @@
     justify-content: center;
     align-items: center;
     font-family: "Inter";
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.4;
     overflow-y: auto;
 }
@@ -499,9 +447,10 @@
 .about .memoriam-text,
 .index .memoriam-text,
 .partners .memoriam-text,
-.rewards .memoriam-text {
+.rewards .memoriam-text,
+.donate-to-dev-team .memoriam-text {
     font-family: "Inter";
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.4;
 }
 
@@ -509,7 +458,7 @@
     margin: 0;
     padding: 0;
     font-family: "Inter";
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.4;
 }
 
@@ -517,15 +466,16 @@
 .about .memoriam-text p,
 .index .memoriam-text p,
 .partners .memoriam-text p,
-.rewards .memoriam-text p {
+.rewards .memoriam-text p,
+.donate-to-dev-team .memoriam-text p {
     font-family: "Inter";
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.4;
 }
 
 .memoriam-name {
     font-family: "Inter";
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
     position: absolute;
@@ -551,9 +501,10 @@
 .about .memoriam-name,
 .index .memoriam-name,
 .partners .memoriam-name,
-.rewards .memoriam-name {
+.rewards .memoriam-name,
+.donate-to-dev-team .memoriam-name {
     font-family: "Inter";
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -568,8 +519,9 @@
     .about .memoriam-text,
     .index .memoriam-text,
     .partners .memoriam-text,
-    .rewards .memoriam-text {
-        font-size: 20px;
+    .rewards .memoriam-text,
+    .donate-to-dev-team .memoriam-text {
+        font-size: 16px;
         padding: 1rem;
     }
     
@@ -577,16 +529,18 @@
     .about .memoriam-text p,
     .index .memoriam-text p,
     .partners .memoriam-text p,
-    .rewards .memoriam-text p {
-        font-size: 20px;
+    .rewards .memoriam-text p,
+    .donate-to-dev-team .memoriam-text p {
+        font-size: 16px;
     }
     
     .memoriam-name,
     .about .memoriam-name,
     .index .memoriam-name,
     .partners .memoriam-name,
-    .rewards .memoriam-name {
-        font-size: 28px;
+    .rewards .memoriam-name,
+    .donate-to-dev-team .memoriam-name {
+        font-size: 20px;
     }
 }
 
