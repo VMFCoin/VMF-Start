@@ -465,22 +465,28 @@ body {
 }
 
 .partner-content {
-    margin: 0 auto;
-    padding: 2rem 0;
     width: 100%;
-    text-align: center;
+    padding: 0 2rem;
+    margin: 0;
+}
+
+.charity-intro {
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0;
+}
+
+.charity-intro p {
+    max-width: 100%;
 }
 
 .partner-contents {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    padding: 2rem;
+    gap: 2rem;
+    padding: 0 2rem;
     margin: 0 auto;
-    max-width: 1400px;
-    width: 90%;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
 }
 
 .partner {
