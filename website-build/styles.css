@@ -48,27 +48,32 @@
         display: none;
     }
     .navigation ul{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        justify-content: start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.5rem 2rem;
         width: 100%;
         max-width: 1200px;
         margin: 0;
+        gap: 1rem;
     }
     /* Specific style for donate-to-dev-team page and partners page */
    /* .donate-to-dev-team .navigation ul,
     .partners .navigation ul,
     .about .navigation ul {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        justify-content: start;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0.5rem 2rem;
         width: 100%;
         max-width: 1200px;
         margin: 0;
+<<<<<<< HEAD
     }*/
+=======
+        gap: 1rem;
+    }
+>>>>>>> 80b9ad369f2bd610c86691a380643bc1c3cba593
     .section-two {
         margin-left: 10rem;
         margin-right: 5rem;
@@ -81,10 +86,16 @@
 }
     
 @media(max-width: 875px) {
+<<<<<<< HEAD
     /*.navigation {
         width: 100%;
         max-width: 1400px;
     }*/
+=======
+    .navigation {
+        height: auto;
+    }
+>>>>>>> 80b9ad369f2bd610c86691a380643bc1c3cba593
     .primary-navigation {
         position: fixed;
         inset: 0 30% 0 0;
@@ -99,7 +110,10 @@
         transition: .5s;
     }
     .navigation ul {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem;
+        height: auto;
     }
     .mobile-nav-toggle {
         position: absolute;
@@ -146,8 +160,10 @@
     }
     
     .navigation li {
-        padding: 0.5rem;
-        justify-content: flex-start;
+        width: 100%;
+        margin: 0.25rem 0;
+        padding: 0.25rem;
+        height: auto;
     }
 }    
 .body {
@@ -242,30 +258,36 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+<<<<<<< HEAD
+=======
+    padding-left: calc(8vh + 2rem);
+    height: 45px;
+>>>>>>> 80b9ad369f2bd610c86691a380643bc1c3cba593
 }
 
 .navigation ul {
     padding-inline-start: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    justify-content: start;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
+    padding: 0;
     width: 100%;
     max-width: 1200px;
+    gap: 1rem;
+    height: 100%;
 }
 
 .navigation li {
     list-style: none;
     text-align: left;
-    border-radius: 15px;
-    padding: .5rem;
+    padding: 0;
     margin: 0;
+    flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .navigation a:link {
@@ -274,8 +296,8 @@
     font-size: 18px;
     font-weight: 900;
     white-space: nowrap;
+    text-align: center;
     width: 100%;
-    text-align: left;
 }
 
 .navigation a:visited {
@@ -424,67 +446,145 @@
 
 .memoriam-text {
     position: absolute;
-    top: calc(50% - 20px);
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 10px;
     opacity: 0;
-    width: 90%;  
-    max-height: none; 
+    width: 90%;
+    height: 90%;
     text-align: center;
     transition: opacity 0.3s ease;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 1rem;
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-y: auto;
+}
+
+.memoriam-rank {
+    display: block;
+    margin-bottom: 0;
+    line-height: 1;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.memoriam-description {
+    display: block;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+    text-align: center;
+    padding-top: 0;
+}
+
+/* Ensure consistent text styling across all pages */
+.about .memoriam-text,
+.index .memoriam-text,
+.partners .memoriam-text,
+.rewards .memoriam-text,
+.donate-to-dev-team .memoriam-text {
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.memoriam-text p {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* Ensure consistent paragraph styling across all pages */
+.about .memoriam-text p,
+.index .memoriam-text p,
+.partners .memoriam-text p,
+.rewards .memoriam-text p,
+.donate-to-dev-team .memoriam-text p {
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.memoriam-name {
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000,
+        2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure consistent name styling across all pages */
+.about .memoriam-name,
+.index .memoriam-name,
+.partners .memoriam-name,
+.rewards .memoriam-name,
+.donate-to-dev-team .memoriam-name {
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .memoriam-one:hover .memoriam-text,
 .memoriam-two:hover .memoriam-text {
     opacity: 1;
-}
-
-.memoriam-name {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0.5rem 0;
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    z-index: 3;
-    opacity: 1;  
-    transition: opacity 0.3s ease; 
-}
-
-
-.memoriam-one:hover .memoriam-name,
-.memoriam-two:hover .memoriam-name {
-    opacity: 0; 
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {
-    .section-one {
-        height: 40vh;
-        min-height: 250px;
+    .memoriam-text,
+    .about .memoriam-text,
+    .index .memoriam-text,
+    .partners .memoriam-text,
+    .rewards .memoriam-text,
+    .donate-to-dev-team .memoriam-text {
+        font-size: 16px;
+        padding: 1rem;
     }
-
-    .section-one-text {
-        font-size: clamp(32px, 5vw, 48px);
-        margin-top: 60px;
+    
+    .memoriam-text p,
+    .about .memoriam-text p,
+    .index .memoriam-text p,
+    .partners .memoriam-text p,
+    .rewards .memoriam-text p,
+    .donate-to-dev-team .memoriam-text p {
+        font-size: 16px;
     }
-
-    .motto {
-        font-size: 40px;
-    }
-
-    .memoriam-contents {
-        width: 71.25%;
-        height: auto;
-        min-height: 500px;
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    
+    .memoriam-name,
+    .about .memoriam-name,
+    .index .memoriam-name,
+    .partners .memoriam-name,
+    .rewards .memoriam-name,
+    .donate-to-dev-team .memoriam-name {
+        font-size: 20px;
     }
 }
 
@@ -965,12 +1065,13 @@ h3 {
     .navigation ul {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     .navigation li {
         width: 100%;
-        margin: 0.5rem 0;
+        margin: 0.25rem 0;
+        padding: 0.25rem;
     }
 
     .logo {
@@ -1050,14 +1151,20 @@ h3 {
 .donate-to-dev-team .navigation ul,
 .partners .navigation ul,
 .about .navigation ul {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    justify-content: start;
-    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
     width: 100%;
     max-width: 1200px;
     margin: 0;
+<<<<<<< HEAD
 }*/
+=======
+    gap: 1rem;
+    height: 100%;
+}
+>>>>>>> 80b9ad369f2bd610c86691a380643bc1c3cba593
 
 .rewards .section-two {
     margin-left: auto;
