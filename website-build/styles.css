@@ -1046,7 +1046,7 @@ h3 {
     max-width: 1400px;
     margin: 0 auto;
     justify-content: center;
-    width: 90%;
+    width: 80%;
 }
 
 .partners .partner {
@@ -1074,16 +1074,38 @@ h3 {
     margin: 0;
 }
 
+.partner-title {
+    font-family: "Army-Rust";
+    font-size: 54px;
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+.charity-intro {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-align: center;
+}
+
 @media (max-width: 1200px) {
     .partners .partner-contents {
         grid-template-columns: repeat(2, 1fr);
-        width: 90%;
+        width: 80%;
+        margin: 0 auto;
     }
 }
 
 @media(max-width: 768px) {
     .partners .partner-contents {
         grid-template-columns: 1fr;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .charity-intro {
         width: 90%;
     }
 }
