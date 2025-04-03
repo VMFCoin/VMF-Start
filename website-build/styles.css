@@ -171,8 +171,9 @@ body {
 .navigation {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    transform: none;
     z-index: 1000;
     background-color: #bb133dad;
     backdrop-filter: blur(10px);
@@ -180,7 +181,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1400px;
 }
 
 .navigation ul {
@@ -231,7 +231,7 @@ body {
 }
 
 .section-one {
-    margin: 0 auto;
+    margin: 0;
     background-image: var(--background-image);
     height: 45vh;
     min-height: 300px;
@@ -242,7 +242,6 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
-    max-width: 1400px;
     width: 100%;
     overflow: hidden;
 }
