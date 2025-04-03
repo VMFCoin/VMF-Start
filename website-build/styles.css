@@ -1045,8 +1045,8 @@ h3 {
 }
 
 .text-divider-image {
-    width: 100%;
-    max-width: 1200px;
+    width: 80%;
+    max-width: 960px;
     height: auto;
     margin: 4rem auto;
     display: block;
@@ -1057,6 +1057,6 @@ h3 {
 @media (max-width: 768px) {
     .text-divider-image {
         margin: 3rem auto;
-        width: 90%;
+        width: 72%;
     }
 }
