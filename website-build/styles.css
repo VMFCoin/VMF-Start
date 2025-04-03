@@ -483,11 +483,11 @@ body {
 }
 
 .partner-title {
-    font-family: "Army-Rust";
-    font-size: 42px;
-    color: #bb133d;
-    text-align: left;
-    margin: 2rem 0;
+    font-size: 54px;
+    color: #454B1B;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 .partner:hover {
@@ -584,10 +584,11 @@ body {
 }
 
 .section-three h3 {
-    font-size: 48px;
+    font-size: 54px;
+    color: #454B1B;
+    text-align: center;
     margin-block-end: 0;
     margin-block-start: 0;
-    color: #062863;
     line-height: 1;
     font-weight: 900;
 }
@@ -616,15 +617,17 @@ body {
 }
 
 .section-two h3 {
-    font-size: 30px;
-    color: #ffffff;
+    font-size: 54px;
+    color: #454B1B;
+    text-align: center;
 }
 
 .section-four h3 {
-    font-size: 48px;
+    font-size: 54px;
+    color: #454B1B;
+    text-align: center;
     margin-block-end: 0;
     margin-block-start: 0;
-    color: #062863;
     line-height: 1;
     font-weight: 900;
 }
@@ -635,10 +638,11 @@ body {
 }
 
 .section-five h3 {
-    font-size: 48px;
+    font-size: 54px;
+    color: #454B1B;
+    text-align: center;
     margin-block-end: 0;
     margin-block-start: 0;
-    color: #062863;
     line-height: 1;
     font-weight: 900;
 }
@@ -649,12 +653,13 @@ body {
 }
 
 h3 {
-    font-size: 48px;
-    margin-block-end: 0;
-    margin-block-start: 0;
-    color: #062863;
+    font-size: 54px;
+    color: #454B1B;
+    text-align: center;
     line-height: 1;
     font-weight: 900;
+    margin-block-end: 0;
+    margin-block-start: 0;
 }
 
 .vote ul {
@@ -822,7 +827,7 @@ h3 {
     border: 0.25rem solid #bb133d;
     background-color: #bb133d;
     color: #ffffff;
-    font-size: 42px;
+    font-size: 54px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -848,7 +853,8 @@ h3 {
     line-height: 1;
     padding: 0;
     margin: 0;
-    font-size: 42px;
+    font-size: 54px;
+    color: #454B1B;
 }
 
 .buy-now:hover {
