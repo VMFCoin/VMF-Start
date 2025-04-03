@@ -45,19 +45,22 @@
     .navigation ul{
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 3rem;
-        justify-content: space-evenly;
-        padding: 0 4rem;
-        max-width: 1400px;
-        margin: 0 auto;
+        gap: 2rem;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        width: 100%;
+        max-width: 100%;
     }
     /* Specific style for donate-to-dev-team page and partners page */
     .donate-to-dev-team .navigation ul,
-    .partners .navigation ul {
+    .partners .navigation ul,
+    .about .navigation ul {
         grid-template-columns: repeat(6, 1fr);
-        gap: 3rem;
-        justify-content: space-evenly;
-        padding: 0 4rem;
+        gap: 2rem;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        width: 100%;
+        max-width: 100%;
     }
     .section-two {
         margin-left: 10rem;
@@ -173,12 +176,11 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 3rem;
-    justify-content: space-evenly;
-    padding: 0 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
     width: 100%;
+    max-width: 100%;
 }
 
 .navigation li {
@@ -1015,13 +1017,14 @@ h3 {
 
 /* Specific style for donate-to-dev-team page and partners page */
 .donate-to-dev-team .navigation ul,
-.partners .navigation ul {
+.partners .navigation ul,
+.about .navigation ul {
     grid-template-columns: repeat(6, 1fr);
-    gap: 3rem;
-    justify-content: space-evenly;
-    padding: 0 4rem;
-    max-width: 1400px;
+    gap: 2rem;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
     width: 100%;
+    max-width: 100%;
 }
 
 @media (max-width: 768px) {
