@@ -21,11 +21,14 @@
 }
 
 @font-face {
-    font-family: "Inter";
+    font-family: "Monda";
     src: url("./fonts/Monda-VariableFont_wght.ttf");
+}
+
+@font-face {
     font-family: "Army-Rust";
     src: url("./fonts/ARMY_RUST.ttf");
-  }
+}
 
 * {
     box-sizing: border-box;
@@ -837,6 +840,7 @@ h3 {
     border: 0.25rem solid #bb133d;
     background-color: #bb133d;
     color: #ffffff;
+    font-family: "Monda", sans-serif;
     font-size: 36px;
     font-weight: bold;
     cursor: pointer;
@@ -865,7 +869,7 @@ h3 {
     margin: 0;
     font-size: 36px;
     color: #ffffff;
-    font-family: "Inter";
+    font-family: "Monda", sans-serif;
     font-weight: bold;
 }
 
