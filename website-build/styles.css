@@ -148,7 +148,7 @@ body {
     margin: 1vh;
     cursor: pointer;
     position: fixed;
-    right: 1rem;
+    left: 1rem;
     top: 1rem;
     z-index: 1001;
 }
@@ -816,7 +816,7 @@ h3 {
     }
 
     .logo {
-        right: 4rem;
+        left: 1rem;
     }
 }
 
