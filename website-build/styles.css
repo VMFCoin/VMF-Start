@@ -49,7 +49,7 @@
         justify-content: space-between;
         padding: 0.5rem 2rem;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
     }
     /* Specific style for donate-to-dev-team page and partners page */
@@ -61,7 +61,7 @@
         justify-content: space-between;
         padding: 0.5rem 2rem;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
     }
     .section-two {
@@ -78,7 +78,7 @@
 @media(max-width: 875px) {
     .navigation {
         width: 100%;
-        max-width: 100%;
+        max-width: 1400px;
     }
     .primary-navigation {
         position: fixed;
@@ -180,7 +180,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .navigation ul {
@@ -192,7 +192,7 @@ body {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .navigation li {
@@ -242,7 +242,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     overflow: hidden;
 }
@@ -289,11 +289,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .memoriam-contents {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -483,7 +483,7 @@ body {
 }
 
 .partner-content {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -491,7 +491,7 @@ body {
 }
 
 .charity-intro {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -508,7 +508,7 @@ body {
     gap: 2rem;
     justify-content: center;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .partner {
@@ -933,7 +933,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -1028,7 +1028,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -1041,7 +1041,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 /* Specific style for donate-to-dev-team page and partners page */
@@ -1053,7 +1053,7 @@ h3 {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -1090,7 +1090,7 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     justify-content: center;
     width: 90%;
