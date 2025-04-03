@@ -501,6 +501,7 @@
 .footer-links li {
     text-align: center;
     width: 100%;
+    font-size: 24px;
 }
 
 .footer-links a {
@@ -508,6 +509,7 @@
     color: #a7a6a6;
     display: block;
     padding: 0.5rem;
+    font-size: 24px;
 }
 
 .footer-links a:hover {
@@ -519,20 +521,34 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
     }
-}
 
-.socials img{
-    height: 16px;
+    .footer-links li,
+    .footer-links a {
+        font-size: 24px;
+    }
 }
 
 .socials {
     list-style: none;
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
-.socials .bluesky img{
+.socials li {
+    font-size: 24px;
+    color: #a7a6a6;
+    display: flex;
+    align-items: center;
+}
+
+.socials img {
     height: 24px;
+    width: auto;
+}
+
+.socials .bluesky img {
+    height: 32px;
 }
 
 .partner-content {
