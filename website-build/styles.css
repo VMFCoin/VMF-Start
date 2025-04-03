@@ -44,10 +44,10 @@
     }
     .navigation ul{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
         justify-content: space-between;
-        padding: 0.5rem 2rem;
+        padding: 0.75rem 2rem;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
@@ -56,10 +56,10 @@
     .donate-to-dev-team .navigation ul,
     .partners .navigation ul,
     .about .navigation ul {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.5rem;
         justify-content: space-between;
-        padding: 0.5rem 2rem;
+        padding: 0.75rem 2rem;
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
@@ -228,11 +228,11 @@
     padding-inline-start: 0;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
+    padding: 0.75rem 2rem;
     width: 100%;
     max-width: 1200px;
 }
@@ -241,7 +241,7 @@
     list-style: none;
     text-align: center;
     border-radius: 15px;
-    padding: .5rem;
+    padding: .75rem;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -251,23 +251,21 @@
 .navigation a:link {
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 900;
     white-space: nowrap;
     width: 100%;
     text-align: center;
 }
 
-
 .navigation a:visited {
     color: #ffffff;
+    font-size: 24px;
 }
-
 
 .navigation a:hover {
     color: #a7a6a6;
 }
-
 
 .navigation a:focus {
     outline: none;
@@ -1027,10 +1025,10 @@ h3 {
 .donate-to-dev-team .navigation ul,
 .partners .navigation ul,
 .about .navigation ul {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
     justify-content: space-between;
-    padding: 0.5rem 2rem;
+    padding: 0.75rem 2rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
