@@ -1044,23 +1044,19 @@ h3 {
     }
 }
 
-.content-break-image {
+.text-divider-image {
     width: 100%;
     max-width: 1200px;
     height: auto;
     margin: 4rem auto;
     display: block;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.text-section {
-    margin-bottom: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-    .content-break-image {
-        margin: 2rem auto;
+    .text-divider-image {
+        margin: 3rem auto;
         width: 90%;
     }
 }
