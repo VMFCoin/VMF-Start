@@ -298,18 +298,16 @@ body {
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     background-color: #0a3161c0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     text-align: center;
-    gap: 1em;
     height: 500px;
     color: white;
     border-radius: 30px;
     position: relative;
     max-width: 1400px;
+    padding-left: 160px;
 }
 
 .grid-row-span-2 {
@@ -336,6 +334,7 @@ body {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: -20px;
 }
 
 .memoriam-one:hover,
@@ -361,7 +360,7 @@ body {
 
 .memoriam-text {
     position: absolute;
-    top: 50%;
+    top: calc(50% - 20px);
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.7);
@@ -386,7 +385,7 @@ body {
     font-weight: bold;
     margin: 0.5rem 0;
     position: absolute;
-    bottom: 10px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -490,14 +489,14 @@ body {
 .partner-content {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 0 2rem 160px;
     max-width: 1400px;
 }
 
 .charity-intro {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 0 2rem 160px;
     max-width: 1400px;
 }
 
@@ -511,7 +510,7 @@ body {
     gap: 2rem;
     width: 100%;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 2rem 0 2rem 160px;
     max-width: 1400px;
 }
 
@@ -540,6 +539,7 @@ body {
     max-width: 1400px;
     margin: 2rem auto;
     padding: 0 1rem;
+    padding-left: 160px;
 }
 
 .partner:hover {
@@ -1010,6 +1010,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     padding: 2rem 0;
+    padding-left: 160px;
 }
 
 @media (max-width: 768px) {
@@ -1018,9 +1019,18 @@ h3 {
     .section-four,
     .section-five,
     .charity-intro,
-    .partner-content {
-        margin-left: auto;
-        margin-right: auto;
+    .partner-content,
+    .partner-contents,
+    .memoriam-contents,
+    .partner-title,
+    .motto,
+    h3 {
+        padding-left: 150px;
+    }
+
+    .buy-now {
+        width: 120px;
+        height: 120px;
     }
 }
 
