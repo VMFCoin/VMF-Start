@@ -164,14 +164,16 @@ body {
 .navigation {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     background-color: #bb133dad;
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .navigation ul {
@@ -183,7 +185,6 @@ body {
     justify-content: space-between;
     padding: 0.5rem 2rem;
     width: 100%;
-    max-width: 1400px;
 }
 
 .navigation li {
@@ -222,7 +223,7 @@ body {
 }
 
 .section-one {
-    margin-top: 0;
+    margin: 0 auto;
     background-image: var(--background-image);
     height: 45vh;
     min-height: 300px;
@@ -233,7 +234,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+    max-width: 1200px;
     width: 100%;
     overflow: hidden;
 }
@@ -283,9 +284,11 @@ body {
 }
 
 .memoriam-contents {
-    margin: 0 auto;
     max-width: 1200px;
-    width: 90%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
     background-color: #0a3161c0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -294,7 +297,6 @@ body {
     height: 500px;
     color: white;
     border-radius: 30px;
-    padding: 2rem;
     position: relative;
 }
 
@@ -472,15 +474,19 @@ body {
 }
 
 .partner-content {
+    max-width: 1200px;
     width: 100%;
-    padding: 0 2rem;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
 }
 
 .charity-intro {
+    max-width: 1200px;
     width: 100%;
-    padding: 0 2rem;
-    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
 }
 
 .charity-intro p {
@@ -491,9 +497,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    padding: 0 2rem;
-    margin: 0 auto;
-    width: 100%;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .partner {
@@ -590,16 +595,14 @@ body {
 @media (max-width: 1200px) {
     .partner-contents {
         grid-template-columns: repeat(2, 1fr);
-        width: 80%;
-        margin-left: 5rem;
+        padding: 1rem;
     }
 }
 
 @media(max-width: 768px) {
     .partner-contents {
         grid-template-columns: 1fr;
-        width: 80%;
-        margin-left: 2rem;
+        padding: 1rem;
     }
 }
 
