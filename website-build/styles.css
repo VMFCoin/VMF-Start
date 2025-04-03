@@ -141,15 +141,37 @@
     font-size: var(--step-0-24px);
     width: 100%;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .body > *:not(.section-one):not(.navigation):not(.buy-now):not(.footer):not(.bottom) {
-    padding-left: 160px; /* Space for buy button */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: calc(160px + 2rem); /* Space for buy button plus some margin */
+    padding-right: 2rem;
+}
+
+.partner-content,
+.partner-contents,
+.partner-title {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
 }
 
 @media (max-width: 768px) {
     .body > *:not(.section-one):not(.navigation):not(.buy-now):not(.footer):not(.bottom) {
-        padding-left: 150px; /* Slightly reduced padding for mobile */
+        padding-left: calc(150px + 1rem);
+        padding-right: 1rem;
+    }
+    
+    .partner-content,
+    .partner-contents,
+    .partner-title {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
     }
 }
 
@@ -505,9 +527,12 @@
 
 .partner-content {
     width: 100%;
-    margin: 0 auto;
-    padding: 2rem 0 2rem 160px;
     max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .charity-intro {
@@ -526,9 +551,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     width: 100%;
-    margin: 0 auto;
-    padding: 2rem 0 2rem 160px;
     max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    justify-content: center;
+    justify-items: center;
 }
 
 .partner {
@@ -543,8 +570,6 @@
     height: 300px;
     width: 300px;
     margin: 0 auto;
-    overflow: hidden;
-    position: relative;
 }
 
 .partner-title {
@@ -553,9 +578,7 @@
     color: #000000;
     text-align: center;
     width: 100%;
-    max-width: 1400px;
     margin: 2rem auto;
-    padding: 0 1rem;
     padding-left: 160px;
 }
 
@@ -634,6 +657,10 @@
     .partner-contents {
         grid-template-columns: 1fr;
         padding: 1rem;
+    }
+    
+    .partner {
+        margin: 0 auto;
     }
 }
 
@@ -1022,8 +1049,7 @@ h3 {
 .section-three,
 .section-four,
 .section-five,
-.charity-intro,
-.partner-content {
+.charity-intro {
     margin-left: auto;
     margin-right: auto;
     padding: 2rem 0;
@@ -1035,19 +1061,12 @@ h3 {
     .section-three,
     .section-four,
     .section-five,
-    .charity-intro,
-    .partner-content,
-    .partner-contents,
-    .memoriam-contents,
-    .partner-title,
-    .motto,
-    h3 {
+    .charity-intro {
         padding-left: 150px;
     }
-
-    .buy-now {
-        width: 120px;
-        height: 120px;
+    
+    .partner-title {
+        padding-left: 150px;
     }
 }
 
