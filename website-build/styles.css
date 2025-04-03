@@ -679,27 +679,27 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1rem;
-    width: min(60%, 400px);
+    padding: 0.75rem;
+    width: min(45%, 300px);
     margin: 2rem auto;
-    gap: 0.75rem;
-    border-radius: 20px;
+    gap: 0.5rem;
+    border-radius: 15px;
 }
 
 .vote-box p {
     font-size: var(--step-3-24px);
     color: #000;
     font-weight: 900;
-    margin: 0.4em;
+    margin: 0.3em;
 }
 
 .vote-box button {
-    width: min(180px, 90%);
-    height: 3rem;
+    width: min(140px, 90%);
+    height: 2.5rem;
     border-radius: 25px;
     border: none;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    margin: 0.25rem;
+    font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+    margin: 0.2rem;
     background-color: #0a3161;
     color: #ffffff;
     cursor: pointer;
