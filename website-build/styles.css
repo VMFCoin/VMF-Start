@@ -44,25 +44,25 @@
     }
     .navigation ul{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.5rem;
-        justify-content: space-between;
-        padding: 0.75rem 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        justify-content: start;
+        padding: 0.5rem 2rem;
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 0;
     }
     /* Specific style for donate-to-dev-team page and partners page */
     .donate-to-dev-team .navigation ul,
     .partners .navigation ul,
     .about .navigation ul {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 1.5rem;
-        justify-content: space-between;
-        padding: 0.75rem 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        justify-content: start;
+        padding: 0.5rem 2rem;
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: 0;
     }
     .section-two {
         margin-left: 10rem;
@@ -132,6 +132,17 @@
         border-radius: 50%;
         cursor: pointer;
         transition: all 0.3s ease;
+    }
+    
+    .navigation a:link,
+    .navigation a:visited {
+        font-size: 18px;
+        text-align: left;
+    }
+    
+    .navigation li {
+        padding: 0.5rem;
+        justify-content: flex-start;
     }
 }    
 .body {
@@ -226,41 +237,41 @@
 
 .navigation ul {
     padding-inline-start: 0;
-    margin: 0 auto;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-content: start;
     align-items: center;
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 2rem;
     width: 100%;
     max-width: 1200px;
 }
 
 .navigation li {
     list-style: none;
-    text-align: center;
+    text-align: left;
     border-radius: 15px;
-    padding: .75rem;
+    padding: .5rem;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .navigation a:link {
     text-decoration: none;
     color: #ffffff;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 900;
     white-space: nowrap;
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .navigation a:visited {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .navigation a:hover {
@@ -1025,13 +1036,13 @@ h3 {
 .donate-to-dev-team .navigation ul,
 .partners .navigation ul,
 .about .navigation ul {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    justify-content: space-between;
-    padding: 0.75rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-content: start;
+    padding: 0.5rem 2rem;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .rewards .section-two {
