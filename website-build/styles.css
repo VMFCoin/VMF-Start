@@ -451,14 +451,8 @@ body {
 .partner-contents {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    text-align: center;
-    gap: 2em;
-    height: auto;
-    color: #062863;
-    border-radius: 30px;
+    gap: 2rem;
     padding: 2rem;
-    position: relative;
-    width: 90%;
     max-width: 1400px;
     margin: 0 auto;
 }
