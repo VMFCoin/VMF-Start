@@ -466,7 +466,7 @@ body {
 
 .partner-content {
     margin: 0 auto;
-    padding: 0;
+    padding: 2rem 0;
     width: 100%;
     text-align: center;
 }
@@ -474,11 +474,11 @@ body {
 .partner-contents {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 0;
+    gap: 3rem;
+    padding: 2rem;
     margin: 0 auto;
-    max-width: 1200px;
-    width: 80%;
+    max-width: 1400px;
+    width: 90%;
     justify-content: center;
     align-items: center;
 }
@@ -505,7 +505,8 @@ body {
     color: #000000;
     text-align: center;
     width: 100%;
-    margin: 2rem auto;
+    margin: 3rem auto 2rem;
+    padding: 0 1rem;
 }
 
 .partner:hover {
