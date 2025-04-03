@@ -864,8 +864,9 @@ h3 {
     padding: 0;
     margin: 0;
     font-size: 36px;
-    color: #454B1B;
-    font-family: "Army-Rust";
+    color: #ffffff;
+    font-family: "Inter";
+    font-weight: bold;
 }
 
 .buy-now:hover {
