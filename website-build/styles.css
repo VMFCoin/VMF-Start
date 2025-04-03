@@ -140,9 +140,7 @@ body {
     color: #828282;
     font-size: var(--step-0-24px);
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0;
 }
 .header, .navigation {
     margin: 0;
@@ -184,18 +182,19 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: calc(8vh + 2rem); /* Space for logo */
+    padding-left: calc(8vh + 2rem);
 }
 
 .navigation ul {
     padding-inline-start: 0;
-    margin: 0;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1rem;
     justify-content: flex-start;
     padding: 0.5rem 2rem;
     width: 100%;
+    max-width: 1400px;
 }
 
 .navigation li {
@@ -291,14 +290,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    margin: 0;
     padding: 2rem;
 }
 
 .memoriam-contents {
     width: 100%;
-    max-width: 1400px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -312,6 +309,7 @@ body {
     color: white;
     border-radius: 30px;
     position: relative;
+    max-width: 1400px;
 }
 
 .grid-row-span-2 {
@@ -437,6 +435,8 @@ body {
     background-color: #0a3161;
     color: #a7a6a6;
     padding: 1rem;
+    width: 100%;
+    margin: 0;
 }
 
 .footer-links {
@@ -937,7 +937,8 @@ h3 {
     justify-content: flex-start;
     padding: 0.5rem 2rem;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 1400px;
 }
 
 .rewards .section-two {
