@@ -1000,3 +1000,46 @@ h3 {
         margin-right: 2rem;
     }
 }
+
+/* Specific style for partners page */
+.partners .partner-contents {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 90%;
+}
+
+.partners .partner {
+    border: solid #bb133d 0.4rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    height: min(300px, 80vw);
+    width: min(300px, 80vw);
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+    .partners .partner-contents {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+@media(max-width: 768px) {
+    .partners .partner-contents {
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+}
