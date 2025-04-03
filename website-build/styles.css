@@ -909,10 +909,27 @@ h3 {
     margin-bottom: 2rem;
 }
 
-.section-two {
+.section-two,
+.section-three,
+.section-four,
+.section-five,
+.charity-intro,
+.partner-content {
     margin-left: 10rem;
     margin-right: 5rem;
-    font-size: var(--step-0-24px);
+    padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .section-two,
+    .section-three,
+    .section-four,
+    .section-five,
+    .charity-intro,
+    .partner-content {
+        margin-left: 5rem;
+        margin-right: 2rem;
+    }
 }
 
 /* Specific style for index page */
@@ -956,6 +973,19 @@ h3 {
     .section-three,
     .section-four,
     .section-five {
+        margin-left: 5rem;
+        margin-right: 2rem;
+    }
+}
+
+.charity-intro {
+    margin-left: 10rem;
+    margin-right: 5rem;
+    padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .charity-intro {
         margin-left: 5rem;
         margin-right: 2rem;
     }
