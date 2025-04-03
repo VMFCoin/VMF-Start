@@ -830,7 +830,7 @@ h3 {
     border: 0.25rem solid #bb133d;
     background-color: #bb133d;
     color: #ffffff;
-    font-size: 54px;
+    font-size: 36px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -856,7 +856,7 @@ h3 {
     line-height: 1;
     padding: 0;
     margin: 0;
-    font-size: 54px;
+    font-size: 36px;
     color: #454B1B;
 }
 
