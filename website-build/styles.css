@@ -285,6 +285,8 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
+    border-radius: 0;
+    padding: 0;
 }
 
 .section-one-text {
@@ -330,12 +332,11 @@
     align-items: center;
     width: 100%;
     margin: 0;
-    padding: 2rem;
 }
 
 .memoriam-contents {
-    width: 100%;
-    margin: 0 auto;
+    width: 90%;
+    margin: -20px auto 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -345,14 +346,14 @@
     color: white;
     border-radius: 30px;
     position: relative;
-    max-width: 1400px;
-    padding-left: 160px;
+    max-width: 1200px;
+    padding: 2rem;
 }
 
 .grid-row-span-2 {
     grid-column: span 2;
     font-size: 48px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-shadow: 
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -440,6 +441,11 @@
 }
 
 @media (max-width: 768px) {
+    .section-one {
+        height: 40vh;
+        min-height: 250px;
+    }
+
     .section-one-text {
         font-size: clamp(32px, 5vw, 48px);
         margin-top: 60px;
@@ -451,10 +457,10 @@
 
     .memoriam-contents {
         width: 95%;
-        grid-template-columns: 1fr;
         height: auto;
         min-height: 500px;
-        padding: 1rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
@@ -533,13 +539,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
+    background-color: white;
 }
 
 .charity-intro {
     width: 100%;
     margin: 0 auto;
-    padding: 2rem 0 2rem 160px;
+    padding: 2rem;
     max-width: 1400px;
+    position: relative;
+    z-index: 1;
+    background-color: white;
 }
 
 .charity-intro p {
@@ -556,6 +568,8 @@
     padding: 2rem;
     justify-content: center;
     justify-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .partner {
@@ -570,6 +584,8 @@
     height: 300px;
     width: 300px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .partner-title {
@@ -580,7 +596,9 @@
     width: 100%;
     margin: 2rem auto;
     padding: 0;
-    max-width: 1400px;
+    position: relative;
+    z-index: 2;
+    background-color: white;
 }
 
 .partner:hover {
@@ -594,6 +612,8 @@
     object-fit: contain;
     transition: transform 0.3s ease;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .partner:hover img {
@@ -602,18 +622,22 @@
 
 .partner-text {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 49, 97, 0.9);
+    bottom: 0;
+    background: rgba(10, 49, 97, 0.95);
     color: white;
     padding: 1rem;
     transform: translateY(100%);
     transition: transform 0.3s ease;
     font-size: 0.9rem;
     line-height: 1.4;
-    max-height: 80%;
     overflow-y: auto;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .partner:hover .partner-text {
@@ -639,9 +663,13 @@
     left: 50%;
     transform: translateX(-50%);
     color: #000;
-    z-index: 3;
+    z-index: 2;
     opacity: 1;
     transition: opacity 0.3s ease;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
 }
 
 .partner:hover .partner-name {
@@ -1180,19 +1208,19 @@ h3 {
 }
 
 .text-divider-image {
-    width: 80%;
-    max-width: 960px;
+    width: 100%;
     height: auto;
-    margin: 4rem auto;
+    margin: 0;
     display: block;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {
     .text-divider-image {
-        margin: 3rem auto;
-        width: 72%;
+        margin: 0;
+        width: 100%;
     }
 }
 
