@@ -666,10 +666,19 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .vote-header img {
-    height: 60px;
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+}
+
+.vote-header h3 {
+    margin: 0;
+    white-space: nowrap;
 }
 
 .vote-box {
