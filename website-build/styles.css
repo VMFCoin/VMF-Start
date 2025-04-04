@@ -1000,6 +1000,11 @@ h3 {
     align-items: center;
 }
 
+.vote a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 .vote-box .learn {
     justify-content: center;
     align-items: center;
