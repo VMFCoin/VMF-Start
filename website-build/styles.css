@@ -168,7 +168,7 @@
     align-items: center;
 }
 
-.body > *:not(.section-one):not(.navigation):not(.buy-now):not(.footer):not(.bottom) {
+.body > *:not(.section-one):not(.navigation):not(.buy-now):not(.footer):not(.bottom):not(.donate-to-devs) {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -873,6 +873,10 @@
     margin-bottom: 2em;
 }
 
+.donate-to-devs {
+    margin-bottom: 1rem;
+}
+
 .right {
     text-align: right;
 }
@@ -958,7 +962,6 @@ h3 {
 
 .vote-header h3 {
     margin: 0;
-    white-space: nowrap;
 }
 
 .vote-box {
