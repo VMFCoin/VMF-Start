@@ -144,13 +144,13 @@
 .body {
     font-family: "Inter";
     font: "Inter";
-    /*margin: 0;*/
+    margin: 0;
     color: #828282;
     font-size: var(--step-0-24px);
     width: 100%;
     padding: 0;
-    /*display: flex;
-    flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -158,8 +158,8 @@
     /*width: 100%;*/
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: calc(160px + 2rem); 
-    padding-right: 2rem;
+    margin-left: calc(160px + 2rem); 
+    margin-right: 2rem;
 }
 
 .partner-content,
@@ -453,6 +453,7 @@
 
 .memoriam-description {
     display: block;
+    font-size: 16px;
     margin-top: 0.25rem;
     line-height: 1.4;
     text-align: center;
@@ -484,7 +485,7 @@
 .partners .memoriam-text p,
 .memoriam-text p,
 .donate-to-dev-team .memoriam-text p {
-    font-family: "Inter";
+    /*font-family: "Inter";*/
     font-size: 18px;
     line-height: 1.4;
 }
@@ -1232,9 +1233,10 @@ h3 {
 }
 
 .text-divider-image {
-    display: block;
+    
     margin: 0 auto;
-    height: 40vh;
+    height: 40vh; 
+    width: auto; 
 }
 
 @media (max-width: 768px) {
@@ -1257,6 +1259,7 @@ h3 {
 .img-break {
     display: block;
     margin: 0 auto;
+    width: 100%;
 }
 
 .quote-one, .quote-two {
@@ -1353,3 +1356,7 @@ h3 {
     height: 210px;
     width: 210px;
 }
+
+li::marker {
+    color:#000000;
+} 
