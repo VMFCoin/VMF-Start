@@ -824,6 +824,10 @@
     color: #000;
 }
 
+.section-two ul strong {
+    color: #000;
+}
+
 .section-three h4 {
     margin-block-end: 0;
     margin-block-start: 0;
