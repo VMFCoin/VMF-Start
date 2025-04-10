@@ -1417,3 +1417,8 @@ h3 {
 .donate button:hover {
     cursor: pointer;
 }
+
+.partner .img-six {
+    height: 210px;
+    width: 210px;
+}
