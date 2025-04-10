@@ -144,18 +144,18 @@
 .body {
     font-family: "Inter";
     font: "Inter";
-    margin: 0;
+    /*margin: 0;*/
     color: #828282;
     font-size: var(--step-0-24px);
     width: 100%;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     align-items: center;
 }
 
 .body > *:not(.section-one):not(.navigation):not(.buy-now):not(.footer):not(.bottom):not(.donate-to-devs) {
-    width: 100%;
+    /*width: 100%;*/
     max-width: 1400px;
     margin: 0 auto;
     padding-left: calc(160px + 2rem); 
@@ -463,7 +463,7 @@
 .about .memoriam-text,
 .index .memoriam-text,
 .partners .memoriam-text,
-.rewards .memoriam-text,
+.memoriam-text,
 .donate-to-dev-team .memoriam-text {
     font-family: "Inter";
     font-size: 18px;
@@ -482,7 +482,7 @@
 .about .memoriam-text p,
 .index .memoriam-text p,
 .partners .memoriam-text p,
-.rewards .memoriam-text p,
+.memoriam-text p,
 .donate-to-dev-team .memoriam-text p {
     font-family: "Inter";
     font-size: 18px;
@@ -505,19 +505,19 @@
     width: 100%;
     text-align: center;
     padding: 0.5rem;
-    text-shadow: 
+    /*text-shadow: 
         -1px -1px 0 #000,
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000,
-        2px 2px 4px rgba(0, 0, 0, 0.5);
+        2px 2px 4px rgba(0, 0, 0, 0.5);*/
 }
 
 /* Ensure consistent name styling across all pages */
 .about .memoriam-name,
 .index .memoriam-name,
 .partners .memoriam-name,
-.rewards .memoriam-name,
+.memoriam-name,
 .donate-to-dev-team .memoriam-name {
     font-family: "Inter";
     font-size: 24px;
@@ -535,7 +535,8 @@
     .about .memoriam-text,
     .index .memoriam-text,
     .partners .memoriam-text,
-    .rewards .memoriam-text,
+
+    .memoriam-text,
     .donate-to-dev-team .memoriam-text {
         font-size: 16px;
         padding: 1rem;
@@ -545,7 +546,8 @@
     .about .memoriam-text p,
     .index .memoriam-text p,
     .partners .memoriam-text p,
-    .rewards .memoriam-text p,
+
+    .memoriam-text p,
     .donate-to-dev-team .memoriam-text p {
         font-size: 16px;
     }
@@ -554,7 +556,8 @@
     .about .memoriam-name,
     .index .memoriam-name,
     .partners .memoriam-name,
-    .rewards .memoriam-name,
+
+    .memoriam-name,
     .donate-to-dev-team .memoriam-name {
         font-size: 20px;
     }
@@ -778,7 +781,7 @@
     font-weight: bold;
     margin: 0.5rem 0;
     position: absolute;
-    bottom: 10px;
+    bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
     color: #000;
@@ -787,7 +790,7 @@
     transition: opacity 0.2s ease;
     width: 100%;
     text-align: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5);
     padding: 0.5rem;
 }
 
@@ -897,16 +900,10 @@
     font-size: 54px;
     color: #000000;
     text-align: center;
-    margin-block-end: 0;
-    margin-block-start: 0;
     line-height: 1;
     font-weight: 900;
 }
 
-.section-five {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 h3 {
     font-family: "Army-Rust";
@@ -1139,68 +1136,6 @@ h3 {
     }
 }
 
-/* Specific style for rewards page */
-
-.rewards .section-two {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: var(--step-0-24px);
-}
-
-.rewards .partner-contents {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-@media (max-width: 1400px) {
-    .rewards .partner-contents {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 768px) {
-    .rewards .partner-contents {
-        grid-template-columns: 1fr;
-    }
-}
-
-.rewards .partner {
-    background-color: #0a3161c0;
-    padding: 2rem;
-    border-radius: 15px;
-    color: white;
-}
-
-.rewards .partner-text {
-    margin-bottom: 1rem;
-}
-
-.rewards .partner-text h4 {
-    font-size: 24px;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.rewards .partner-description {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.rewards .section-three,
-.rewards .section-four,
-.rewards .section-five {
-    margin: 4rem auto;
-    color: #828282;
-}
-
-.rewards h3 {
-    color: #0a3161;
-    font-size: 36px;
-    margin-bottom: 2rem;
-}
-
 .section-two,
 .section-three,
 .section-four,
@@ -1297,19 +1232,14 @@ h3 {
 }
 
 .text-divider-image {
-    width: 100%;
-    height: auto;
-    margin: 0;
     display: block;
-    border-radius: 0;
-    box-shadow: none;
-    object-fit: cover;
+    margin: 0 auto;
+    height: 40vh;
 }
 
 @media (max-width: 768px) {
     .text-divider-image {
-        margin: 0;
-        width: 100%;
+        margin-bottom: 1rem;
     }
 }
 
@@ -1325,7 +1255,8 @@ h3 {
     }
 }
 .img-break {
-    width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 .quote-one, .quote-two {
