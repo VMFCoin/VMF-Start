@@ -1063,6 +1063,10 @@ nav {
 @media (min-width: 876px) {
  
    
+    .mobile-nav-toggle {
+        display: none;
+    }
+    
     .navigation ul {
         gap: 1rem;
         font-size: clamp(12px, 2vw, 18px);
