@@ -103,7 +103,6 @@ body {
     width: 8vh;
     border-radius: 50px;
     border: none;
-    margin: 1vh;
     cursor: pointer;
     position: fixed;
     left: 1rem;
@@ -1110,7 +1109,7 @@ nav {
 
     .primary-navigation {
         position: fixed;
-        inset: 2rem 0 0 30%;
+        inset: 1rem 0 0 30%;
         transform: translateX(100%);
         padding: 5rem 2rem;
         transition: .5s;
@@ -1133,7 +1132,7 @@ nav {
         border-radius: 8px;
         z-index: 9999;
         right: 1rem;
-        top: 3rem;
+        top: 1rem;
         height: 2rem;
         width: 2rem;
     }
