@@ -18,6 +18,11 @@
   --step-4-24px: clamp(1.5552rem, -4.0219rem + 9.9149vw, 3.6621rem);
   --step-5-24px: clamp(1.8662rem, -5.311rem + 12.7595vw, 4.5776rem);
   --step-0-18px: clamp(1.125rem, 0.4981rem + 1.145vw, 1.5rem);
+  --step-0-54-36: clamp(2.25rem, 1.8587rem + 1.9565vw, 3.375rem);
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.5rem;
+    --spacing-xlarge: 2rem;
 }
 
 @font-face {
@@ -39,9 +44,9 @@
     box-sizing: border-box;
 }
 
-/*body {
+body {
     margin: 0;
-}*/
+}
 
 .sr-only{
     display: none;
@@ -60,18 +65,10 @@
     align-items: center;
 }
 
-/*.body > *:not(.section-one):not(.navigation):not(.buy-now):not(.footer):not(.bottom):not(.donate-to-devs) {
-    /*width: 100%;*/
-   /* max-width: 1400px;
-    margin: 0 auto;
-    margin-left: calc(160px + 2rem); 
-    margin-right: 2rem;
-}*/
-
 .partner-content,
 .partner-contents {
-    padding-left: calc(160px + 2rem); 
-    padding-right: 2rem !important;
+    padding-left: var(--spacing-xlarge);
+    padding-right: var(--spacing-xlarge);
 }
 
 .partner-content h1 {
@@ -142,8 +139,8 @@
     bottom: 20px;
     width: 100%;
     z-index: 1;
-    padding: 0 20px;
-    margin-top: 60px;
+    padding: 0 var(--spacing-medium);
+    margin-top: var(--spacing-large);
     text-shadow: 
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -169,7 +166,7 @@
     background-repeat: no-repeat;
     background-position: center center; 
     height: 600px;  
-    padding-top: 3rem;
+    padding-top: var(--spacing-large);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -181,10 +178,10 @@
 
 .memoriam-contents {
     width: 67.5%;
-    margin: -20px auto 0;
+    margin: -var(--spacing-medium) auto 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: var(--spacing-large);
     background-color: #0a3161c0;
     text-align: center;
     height: 500px;
@@ -192,7 +189,7 @@
     border-radius: 30px;
     position: relative;
     max-width: 900px;
-    padding: 2rem;
+    padding: var(--spacing-large);
 }
 
 .grid-row-span-2 {
@@ -231,7 +228,7 @@
 .memoriam-one img,
 .memoriam-two img {
     max-width: 100%;
-    height: auto;
+    /*height: auto;*/
     transition: transform 0.3s ease;
     object-fit: cover;
     max-height: 300px;
@@ -332,7 +329,7 @@
     transition: opacity 0.3s ease;
     width: 100%;
     text-align: center;
-    padding: 0.5rem;
+    padding: var(--spacing-small);
     /*text-shadow: 
         -1px -1px 0 #000,
         1px -1px 0 #000,
@@ -356,6 +353,10 @@
 .memoriam-two:hover .memoriam-text {
     opacity: 1;
     overflow-y: auto;
+}
+
+.bottom {
+    background-color: #0a3161;
 }
 
 .bottom {
@@ -388,7 +389,7 @@
     color: #a7a6a6;
     display: block;
     padding: 0.5rem;
-    font-size: 24px;
+    font-size: var(--step-0-24px);
 }
 
 .footer-links a:hover {
@@ -424,6 +425,7 @@
     margin: 0 auto;
     padding: 2rem;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -447,7 +449,7 @@
 
 .partner-contents {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid layout */
     gap: 2rem;
     width: 100%;
     max-width: 1400px;
@@ -689,7 +691,7 @@
 h3 {
     font-family: "Army-Rust";
     letter-spacing: .3rem;
-    font-size: 54px;
+    font-size: var(--step-0-54-36);
     color: #000000;
     text-align: center;
     line-height: 1;
@@ -704,7 +706,7 @@ h3 {
 }
 
 .vote li {
-    font-size: 36px;
+    font-size: var(--step-0-18px);
     color: #000;
 }
 
@@ -1066,7 +1068,7 @@ nav {
     .mobile-nav-toggle {
         display: none;
     }
-    
+
     .navigation ul {
         gap: 1rem;
         font-size: clamp(12px, 2vw, 18px);
@@ -1137,7 +1139,7 @@ nav {
     .section-two {
         margin-right: 2rem;
         margin-left: 2rem;
-    }*/
+    }
     .buy-now {
         opacity: 0.7;
         color: white;
@@ -1145,9 +1147,9 @@ nav {
         height: 150px;
         font-size: 20px;
         backdrop-filter: blur(2px);
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
+        border-radius: 25px;
         cursor: pointer;
         transition: all 0.3s ease;
     }
@@ -1182,13 +1184,7 @@ nav {
     .donate-to-dev-team .memoriam-name {
         font-size: 20px;
     }
-    .section-two,
-    .section-three,
-    .section-four,
-    .section-five,
-    .charity-intro {
-        padding-left: 150px;
-    }
+
     .partner-title {
         padding: 0;
         margin: 1.5rem auto;
@@ -1205,17 +1201,42 @@ nav {
         font-size: 1.4rem;
         left: 15px;
     }
+    .partner-contents {
+        /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns */
+        gap: 1.5rem; /* Reduce gap */
+        padding: 1.5rem; /* Adjust padding */
+    }
 }
 
+/* Adjust layout for small screens */
 @media (max-width: 480px) {
-    .section-one-text {
-        font-size: clamp(28px, 6vw, 36px);
-        margin-top: 60px;
+    .partner-contents {
+        gap: 1rem; /* Further reduce gap */
+        padding: 1rem; /* Maintain padding */
     }
-    .motto {
-        font-size: 32px;
+}
+
+/* Adjust layout for screens 639px and smaller */
+@media (max-width: 639px) {
+    .partner-contents {
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 1rem; /* Reduce gap */
+        padding: 1rem; /* Adjust padding */
     }
-    .partner-content p {
-        font-size: 20px;
+}
+
+/* Adjust layout for screens between 640px and 943px */
+@media (min-width: 640px) and (max-width: 1001px) {
+    .partner-contents {
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout */
+        gap: 1.5rem; /* Adjust gap */
+        padding: 1.5rem; /* Adjust padding */
+    }
+}
+
+@media (min-width: 1200px) {
+    .partner-contents {
+        grid-template-columns: repeat(3, 1fr);
+        
     }
 }
