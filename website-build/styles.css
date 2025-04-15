@@ -938,7 +938,6 @@ h3 {
 
 .quote-one, .quote-two {
     border: solid 8px #062863;
-    width: 30vw;
     padding: 1rem;
     border-radius: 20px;
     color: #000;
@@ -1061,6 +1060,11 @@ nav {
     
     z-index: 1000;    
 }
+@media (min-width: 481px) {
+    .quote-one, .quote-two {
+        width: 30vw;
+    }
+}
 
 @media (min-width: 876px) {
  
@@ -1097,9 +1101,11 @@ nav {
 @media (max-width: 875px) {
    
     .navigation ul{
-        font-size: 28px;
+        font-size: 18px;
         height:75%;
         padding-left: 2rem;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
     }
 
     .primary-navigation {
@@ -1128,7 +1134,7 @@ nav {
         border-radius: 8px;
         z-index: 9999;
         right: 1rem;
-        top: 1rem;
+        top: 3rem;
         height: 2rem;
         width: 2rem;
     }
@@ -1214,6 +1220,9 @@ nav {
         gap: 1rem; /* Further reduce gap */
         padding: 1rem; /* Maintain padding */
     }
+    .quote-one, .quote-two {
+        width: 40vw;
+    }
 }
 
 /* Adjust layout for screens 639px and smaller */
@@ -1223,6 +1232,33 @@ nav {
         gap: 1rem; /* Reduce gap */
         padding: 1rem; /* Adjust padding */
     }
+    .partner-title {
+        font-size: 48px;
+    }
+
+    .section-three h3 {
+        font-size: 48px;
+    }
+
+    .buy-now {
+        height: 80px;
+        width: 80px;
+    }
+    
+    .buy-now span {
+        font-size: 18px;
+    }
+
+    .vote-header .larger {
+        height: 10vw;
+        width: 10vw;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+
 }
 
 /* Adjust layout for screens between 640px and 943px */
