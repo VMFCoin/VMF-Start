@@ -1102,7 +1102,7 @@ nav {
    
     .navigation ul{
         font-size: 18px;
-        height:75%;
+        height:75vh;
         padding-left: 2rem;
         border-bottom-left-radius: 25px;
         border-top-left-radius: 25px;
@@ -1110,8 +1110,7 @@ nav {
 
     .primary-navigation {
         position: fixed;
-        inset: 0 0 0 30%;
-        background: #483C46;
+        inset: 2rem 0 0 30%;
         transform: translateX(100%);
         padding: 5rem 2rem;
         transition: .5s;
