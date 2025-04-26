@@ -25,7 +25,7 @@ contract VmfCoin is ERC20 {
     modifier onlyMinter() {
         require(
             msg.sender == minter,
-            "MintableERC20: caller is not the minter"
+            "VMF: caller is not the minter"
         );
         _;
     }
@@ -71,7 +71,7 @@ contract VmfCoin is ERC20 {
     function setMinter(address newMinter) external onlyMinter {
         require(
             newMinter != address(0),
-            "MintableERC20: new minter is the zero address"
+            "VMF: new minter is the zero address"
         );
         minter = newMinter;
         emit MinterChanged(newMinter);
@@ -85,7 +85,7 @@ contract VmfCoin is ERC20 {
      * @param to The address to send the USDC to.
      */
     function handleUSDC(uint256 amountUSDC, address to) external {
-        require(_allowedReceivers.contains(to), "MintableERC20: to is not an allowed receiver");
+        require(_allowedReceivers.contains(to), "VMF: to is not an allowed receiver");
 
         // Transfer USDC from sender to this contract
         address(usdc).safeTransferFrom(msg.sender, address(this), amountUSDC);
