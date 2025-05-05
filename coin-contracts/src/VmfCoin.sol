@@ -4,19 +4,49 @@ pragma solidity ^0.8.0;
 import {ERC20} from "lib/solady/src/tokens/ERC20.sol";
 import {SafeTransferLib} from "lib/solady/src/utils/SafeTransferLib.sol";
 import {EnumerableSetLib} from "lib/solady/src/utils/EnumerableSetLib.sol";
+import { FixedPointMathLib } from "lib/solady/src/utils/FixedPointMathLib.sol";
 
 contract VmfCoin is ERC20 {
+    using FixedPointMathLib for uint256;
     using SafeTransferLib for address;
     using EnumerableSetLib for EnumerableSetLib.AddressSet;
 
     address public minter; // Address allowed to mint
     address public usdc;   // Address of the USDC contract
     EnumerableSetLib.AddressSet private _allowedReceivers;
+    address payable public taxReceiver;
+    uint8 taxRateBps = 33;
 
     // TODO: make upgradable?
-    constructor(address _usdc) ERC20() {
+    constructor(address _usdc, address payable _taxReceiver) ERC20() {
         minter = msg.sender;
         usdc = _usdc;
+        taxReceiver = _taxReceiver;
+    }
+
+    /**
+     * @dev Override the _transfer function to implement the tax.
+     */
+    function _transfer(
+        address sender,
+        address recipient,
+        uint256 amount
+    ) internal override {
+        // If the sender or recipient is the zero address, perform a standard transfer
+        if (sender == address(0) || recipient == address(0)) {
+            super._transfer(sender, recipient, amount);
+            return;
+        }
+
+        // Calculate the tax amount.
+        uint256 taxAmount = amount.mulWad(taxRateBps).divWad(10000);
+        uint256 amountAfterTax = amount.saturatingSub(taxAmount);
+
+        // Perform the transfer after deducting the tax.
+        super._transfer(sender, recipient, amountAfterTax);
+
+        // Send the tax to the taxReceiver.
+        super._transfer(sender, taxReceiver, taxAmount);
     }
 
     /**
