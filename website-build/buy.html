@@ -242,7 +242,7 @@
 <body>
     <div class="container">
         <h1>Support VMF Coin</h1>
-        <p>Your donations help the VMF developers</p>
+        <p>Your donations help grow VMF!</p>
 
         <div id="wallet-info">
             <button id="connect-wallet-btn" class="button" onclick="connectWallet()">Connect Wallet</button>
@@ -261,8 +261,9 @@
     </div>
 
     <script>
-        const USDC_ADDRESS = '0x07865c6E87B9F702553773e5Ed6f0458a6163773'; // Base Sepolia USDC
-        const RECIPIENT_ADDRESS = '0xYourRecipientAddress';  // Replace this with the recipient address
+        // Base Sepolia USDC
+        const USDC_ADDRESS = '0x6Ac3aB54Dc5019A2e57eCcb214337FF5bbD52897';
+        const RECIPIENT_ADDRESS = '0xf521a4fE5910b4fb4A14C9546C2837D33bEc455d';
         const BASE_SEPOLIA_CHAIN_ID = 84532; // Base Sepolia Chain ID
 
         let provider;
@@ -286,9 +287,25 @@
                     const network = await provider.getNetwork();
 
                     if (network.chainId !== BASE_SEPOLIA_CHAIN_ID) {
-                        transactionStatus.textContent = `Please switch to the Base Sepolia network. Chain ID is ${BASE_SEPOLIA_CHAIN_ID}`;
-                        transactionStatus.className = 'error';
-                        return;
+                         try {
+                            await window.ethereum.request({
+                                method: 'wallet_switchEthereumChain',
+                                params: [{ chainId: `0x${BASE_SEPOLIA_CHAIN_ID.toString(16)}` }], // chainId must be in hex
+                            });
+                        } catch (switchError) {
+                            // This error code indicates that the chain has not been added to MetaMask.
+                            if (switchError.code === 4902) {
+                                transactionStatus.textContent = `Please add the Base Sepolia network to your wallet and try again.`;
+                                transactionStatus.className = 'error';
+                                console.log("Please add Base Sepolia network");
+                                return;
+                            }
+                            // handle other "switch" errors
+                            transactionStatus.textContent = `Failed to switch to Base Sepolia network. Error: ${switchError.message}`;
+                            transactionStatus.className = 'error';
+                            console.error("Failed to switch network", switchError);
+                            return;
+                        }
                     }
 
                     await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -317,8 +334,9 @@
 
             try {
                 const balance = await usdcContract.balanceOf(account);
-                const formattedBalance = ethers.utils.formatEther(balance);
-                usdcBalanceDisplay.textContent = `USDC Balance: ${formattedBalance}`;
+                console.log('USDC Balance:', balance.toString());
+                const formattedBalance = (balance / 1_000_000.0); // USDC has 6 decimals
+                usdcBalanceDisplay.textContent = `USDC Balance: $${formattedBalance}`;
             } catch (error) {
                 console.error('Error fetching USDC balance:', error);
                 usdcBalanceDisplay.textContent = 'Failed to fetch USDC balance.';
