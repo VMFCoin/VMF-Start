@@ -1,0 +1,397 @@
+<!--
+ Copyright 2025 cbe
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+     https://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USDC Donation Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@ethersproject/providers@5.7.2/dist/ethers-providers.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ethersproject/signer@5.7.2/dist/ethers-signer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ethersproject/contracts@5.7.2/dist/ethers-contracts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #111827; /* Dark background */
+            color: #f9fafb; /* Light text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: linear-gradient(to bottom, #111827, #4b5563); /* Gradient background */
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05); /* Glassmorphism effect - more subtle*/
+            border-radius: 16px; /* Slightly more rounded corners */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Softer shadow */
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Add a border */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: transparent;
+            background-clip: text;
+            background-image: linear-gradient(to right, #6366f1, #8b5cf6); /* Gradient title */
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+        }
+
+        #wallet-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            gap: 10px;
+        }
+
+        #wallet-address {
+            font-size: 0.9rem;
+            color: #a855f7;
+            font-weight: 500;
+            word-wrap: break-word;
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #usdc-balance {
+            font-size: 1rem;
+            color: #f5f5f5;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            margin-bottom: 1.5rem;
+            gap: 10px;
+        }
+
+        input[type="number"] {
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Glassy border */
+            background-color: rgba(0, 0, 0, 0.2); /* Slightly transparent input */
+            color: #ffffff;
+            width: calc(100% - 30px); /* Adjusted width for padding and border */
+            max-width: 400px; /* Added max-width */
+            margin: 0 auto;
+            transition: all 0.3s ease; /* Smooth transition */
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inset shadow */
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #a855f7; /* Highlight on focus */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow on focus */
+            transform: translateY(-2px); /* Slight lift on focus */
+        }
+
+        textarea {
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Glassy border */
+            background-color: rgba(0, 0, 0, 0.2); /* Slightly transparent input */
+            color: #ffffff;
+            width: calc(100% - 30px); /* Adjusted width for padding and border */
+            max-width: 400px; /* Added max-width */
+            margin: 0 auto;
+            transition: all 0.3s ease; /* Smooth transition */
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inset shadow */
+            resize: none;
+            height: 100px;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #a855f7; /* Highlight on focus */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Increased shadow on focus */
+            transform: translateY(-2px); /* Slight lift on focus */
+        }
+
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            background-image: linear-gradient(to right, #8b5cf6, #6366f1); /* Gradient button */
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: fit-content;
+            margin: 0 auto;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+        }
+
+        .button:hover {
+            background-image: linear-gradient(to right, #7c3aed, #4f46e5); /* Slightly darker gradient on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow on hover*/
+        }
+
+        .button:disabled {
+            background-image: linear-gradient(to right, #4b5563, #374151); /* Grayed out gradient */
+            cursor: not-allowed;
+            opacity: 0.7;
+            transform: none;
+            box-shadow: none;
+        }
+
+        #transaction-status {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .success {
+            background-color: rgba(52, 211, 153, 0.1);
+            color: #34d399;
+            border-color: rgba(52, 211, 153, 0.2);
+        }
+
+        .error {
+            background-color: rgba(248, 113, 113, 0.1);
+            color: #f87171;
+            border-color: rgba(248, 113, 113, 0.2);
+        }
+
+        .warning {
+            background-color: rgba(252, 211, 77, 0.1);
+            color: #fcd34d;
+            border-color: rgba(252, 211, 77, 0.2);
+        }
+
+        #connect-wallet-btn {
+            margin-top: 1rem;
+        }
+
+        .spinner {
+            border: 5px solid rgba(255, 255, 255, 0.3); /* Light border */
+            border-top: 5px solid #a855f7;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #note-label{
+            font-size: 0.9rem;
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+            display: block;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 400px;
+        }
+    </style>
+    <script>
+    //USDC Contract ABI
+    const USDC_ABI = [
+      "function balanceOf(address account) external view returns (uint256)",
+      "function transfer(address to, uint256 value) external returns (bool)",
+    ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Support VMF Coin</h1>
+        <p>Your donations help grow VMF!</p>
+
+        <div id="wallet-info">
+            <button id="connect-wallet-btn" class="button" onclick="connectWallet()">Connect Wallet</button>
+            <div id="wallet-address"></div>
+            <div id="usdc-balance"></div>
+        </div>
+
+        <div class="input-container">
+            <input type="number" id="donation-amount" placeholder="Enter USDC Amount" min="0">
+            <label for="note" id="note-label">Add a note (optional)</label>
+            <textarea id="donation-note" placeholder="Your note here..."></textarea>
+        </div>
+
+        <button class="button" id="donate-button" onclick="sendDonation()" disabled>Donate Now</button>
+        <div id="transaction-status"></div>
+    </div>
+
+    <script>
+        // Base Sepolia USDC
+        const USDC_ADDRESS = '0x6Ac3aB54Dc5019A2e57eCcb214337FF5bbD52897';
+        const RECIPIENT_ADDRESS = '0xf521a4fE5910b4fb4A14C9546C2837D33bEc455d';
+        const BASE_SEPOLIA_CHAIN_ID = 84532; // Base Sepolia Chain ID
+
+        let provider;
+        let signer;
+        let account;
+        let usdcContract;
+
+        const connectWalletBtn = document.getElementById('connect-wallet-btn');
+        const walletAddressDisplay = document.getElementById('wallet-address');
+        const usdcBalanceDisplay = document.getElementById('usdc-balance');
+        const donateButton = document.getElementById('donate-button');
+        const donationAmountInput = document.getElementById('donation-amount');
+        const transactionStatus = document.getElementById('transaction-status');
+        const donationNoteInput = document.getElementById('donation-note');
+
+
+        async function connectWallet() {
+            if (window.ethereum) {
+                try {
+                    provider = new ethers.providers.Web3Provider(window.ethereum);
+                    const network = await provider.getNetwork();
+
+                    if (network.chainId !== BASE_SEPOLIA_CHAIN_ID) {
+                         try {
+                            await window.ethereum.request({
+                                method: 'wallet_switchEthereumChain',
+                                params: [{ chainId: `0x${BASE_SEPOLIA_CHAIN_ID.toString(16)}` }], // chainId must be in hex
+                            });
+                        } catch (switchError) {
+                            // This error code indicates that the chain has not been added to MetaMask.
+                            if (switchError.code === 4902) {
+                                transactionStatus.textContent = `Please add the Base Sepolia network to your wallet and try again.`;
+                                transactionStatus.className = 'error';
+                                console.log("Please add Base Sepolia network");
+                                return;
+                            }
+                            // handle other "switch" errors
+                            transactionStatus.textContent = `Failed to switch to Base Sepolia network. Error: ${switchError.message}`;
+                            transactionStatus.className = 'error';
+                            console.error("Failed to switch network", switchError);
+                            return;
+                        }
+                    }
+
+                    await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    signer = provider.getSigner();
+                    account = await signer.getAddress();
+                    usdcContract = new ethers.Contract(USDC_ADDRESS, USDC_ABI, signer);
+
+                    walletAddressDisplay.textContent = `Connected: ${account.substring(0, 6)}...${account.substring(account.length - 4)}`;
+                    connectWalletBtn.textContent = "Connected";
+                    connectWalletBtn.disabled = true;
+                    donateButton.disabled = false;
+                    await getUSDCBalance();
+                } catch (error) {
+                    console.error('Failed to connect wallet:', error);
+                    transactionStatus.textContent = 'Wallet connection failed.';
+                    transactionStatus.className = 'error';
+                }
+            } else {
+                transactionStatus.textContent = 'Please install MetaMask or a compatible wallet.';
+                transactionStatus.className = 'error';
+            }
+        }
+
+        async function getUSDCBalance() {
+            if (!provider || !account) return;
+
+            try {
+                const balance = await usdcContract.balanceOf(account);
+                console.log('USDC Balance:', balance.toString());
+                const formattedBalance = ethers.utils.formatUnits(balance, 6); // USDC has 6 decimals
+                usdcBalanceDisplay.textContent = `USDC Balance: $${formattedBalance}`;
+            } catch (error) {
+                console.error('Error fetching USDC balance:', error);
+                usdcBalanceDisplay.textContent = 'Failed to fetch USDC balance.';
+                transactionStatus.className = 'error';
+            }
+        }
+
+
+
+        async function sendDonation() {
+            if (!signer) {
+                transactionStatus.textContent = 'Please connect your wallet.';
+                transactionStatus.className = 'error';
+                return;
+            }
+
+            const amount = donationAmountInput.value;
+            const note = donationNoteInput.value;
+            if (!amount) {
+                transactionStatus.textContent = 'Please enter a donation amount.';
+                transactionStatus.className = 'error';
+                return;
+            }
+
+            const amountInEther = parseFloat(amount);
+            if (isNaN(amountInEther) || amountInEther <= 0) {
+                transactionStatus.textContent = 'Invalid donation amount.';
+                transactionStatus.className = 'error';
+                return;
+            }
+            const amountInBigNumber = ethers.utils.parseUnits(amount, 6); // USDC has 6 decimals
+
+
+            transactionStatus.textContent = 'Sending donation...';
+            transactionStatus.className = 'warning';
+            donateButton.disabled = true;
+
+            try {
+                const tx = await usdcContract.transfer(RECIPIENT_ADDRESS, amountInBigNumber);
+                await tx.wait(); // Wait for the transaction to be mined
+
+                transactionStatus.textContent = 'Donation successful!';
+                transactionStatus.className = 'success';
+                donationAmountInput.value = ''; // Clear the input
+                donationNoteInput.value = '';
+                await getUSDCBalance();
+
+            } catch (error) {
+                console.error('Error sending donation:', error);
+                transactionStatus.textContent = 'Donation failed.';
+                transactionStatus.className = 'error';
+            } finally {
+                donateButton.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
