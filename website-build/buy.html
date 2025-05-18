@@ -13,8 +13,6 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -233,11 +231,18 @@
             max-width: 400px;
         }
     </style>
+    <script>
+    //USDC Contract ABI
+    const USDC_ABI = [
+      "function balanceOf(address account) external view returns (uint256)",
+      "function transfer(address to, uint256 value) external returns (bool)",
+    ];
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Support VMF Coin</h1>
-        <p>Your donations help the VMF developers!</p>
+        <p>Your donations help the VMF developers</p>
 
         <div id="wallet-info">
             <button id="connect-wallet-btn" class="button" onclick="connectWallet()">Connect Wallet</button>
@@ -258,10 +263,12 @@
     <script>
         const USDC_ADDRESS = '0x07865c6E87B9F702553773e5Ed6f0458a6163773'; // Base Sepolia USDC
         const RECIPIENT_ADDRESS = '0xYourRecipientAddress';  // Replace this with the recipient address
+        const BASE_SEPOLIA_CHAIN_ID = 84532; // Base Sepolia Chain ID
 
         let provider;
         let signer;
         let account;
+        let usdcContract;
 
         const connectWalletBtn = document.getElementById('connect-wallet-btn');
         const walletAddressDisplay = document.getElementById('wallet-address');
@@ -276,9 +283,18 @@
             if (window.ethereum) {
                 try {
                     provider = new ethers.providers.Web3Provider(window.ethereum);
+                    const network = await provider.getNetwork();
+
+                    if (network.chainId !== BASE_SEPOLIA_CHAIN_ID) {
+                        transactionStatus.textContent = `Please switch to the Base Sepolia network. Chain ID is ${BASE_SEPOLIA_CHAIN_ID}`;
+                        transactionStatus.className = 'error';
+                        return;
+                    }
+
                     await window.ethereum.request({ method: 'eth_requestAccounts' });
                     signer = provider.getSigner();
                     account = await signer.getAddress();
+                    usdcContract = new ethers.Contract(USDC_ADDRESS, USDC_ABI, signer);
 
                     walletAddressDisplay.textContent = `Connected: ${account.substring(0, 6)}...${account.substring(account.length - 4)}`;
                     connectWalletBtn.textContent = "Connected";
@@ -300,8 +316,7 @@
             if (!provider || !account) return;
 
             try {
-                //  Real implementation would use ethers.Contract and the USDC ABI.  This is a SIMULATION.
-                const balance = BigInt("1000000000000000000"); // Simulate 1 USDC
+                const balance = await usdcContract.balanceOf(account);
                 const formattedBalance = ethers.utils.formatEther(balance);
                 usdcBalanceDisplay.textContent = `USDC Balance: ${formattedBalance}`;
             } catch (error) {
@@ -334,7 +349,7 @@
                 transactionStatus.className = 'error';
                 return;
             }
-            const amountInBigNumber = ethers.utils.parseEther(amount);
+            const amountInBigNumber = ethers.utils.parseUnits(amount, 6); // USDC has 6 decimals
 
 
             transactionStatus.textContent = 'Sending donation...';
@@ -342,9 +357,8 @@
             donateButton.disabled = true;
 
             try {
-                //  Real implementation would use ethers.Contract and the USDC ABI's transfer function.  This is a SIMULATION.
-                console.log(`Sending ${amount} USDC to ${RECIPIENT_ADDRESS} with note: ${note}`);
-                await new Promise(resolve => setTimeout(resolve, 3000)); // Simulate a 3-second delay
+                const tx = await usdcContract.transfer(RECIPIENT_ADDRESS, amountInBigNumber);
+                await tx.wait(); // Wait for the transaction to be mined
 
                 transactionStatus.textContent = 'Donation successful!';
                 transactionStatus.className = 'success';
