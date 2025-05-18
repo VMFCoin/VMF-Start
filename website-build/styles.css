@@ -1217,6 +1217,10 @@ nav {
         transition: all 0.3s ease;
     }
 
+    .connect-to-wallet {
+        top : calc(56vh + 24px);
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -1304,6 +1308,10 @@ nav {
     
     .buy-now span {
         font-size: 18px;
+    }
+
+    .connect-to-wallet {
+        top: calc(52vh + 20px);
     }
 
     .connect-to-wallet span {
