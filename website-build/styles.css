@@ -930,7 +930,7 @@ h3 {
 
 .connect-to-wallet:hover {
     backdrop-filter: blur(4px);
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
     box-shadow: 0 0 10px rgba(187, 19, 61, 0.5);
 }
 
@@ -1218,7 +1218,15 @@ nav {
     }
 
     .connect-to-wallet {
-        top : calc(56vh + 24px);
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        height: 60px;
+        width: 180px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
 }
@@ -1268,6 +1276,19 @@ nav {
         font-size: 1.4rem;
         left: 15px;
     }
+    
+    .connect-to-wallet {
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        height: 60px;
+        width: 180px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
     .partner-contents {
         /*grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller columns */
         gap: 1.5rem; /* Reduce gap */
@@ -1311,11 +1332,19 @@ nav {
     }
 
     .connect-to-wallet {
-        top: calc(52vh + 20px);
+        bottom: 0;
+        top: auto;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        height: 60px;
+        width: 180px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     .connect-to-wallet span {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .vote-header .larger {
