@@ -335,7 +335,7 @@
             try {
                 const balance = await usdcContract.balanceOf(account);
                 console.log('USDC Balance:', balance.toString());
-                const formattedBalance = (balance / 1_000_000.0); // USDC has 6 decimals
+                const formattedBalance = ethers.utils.formatUnits(balance, 6); // USDC has 6 decimals
                 usdcBalanceDisplay.textContent = `USDC Balance: $${formattedBalance}`;
             } catch (error) {
                 console.error('Error fetching USDC balance:', error);
