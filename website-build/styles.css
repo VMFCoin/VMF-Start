@@ -404,6 +404,7 @@ ul {
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .socials li {
@@ -1308,6 +1309,15 @@ nav {
     .quote-one, .quote-two {
         width: 40vw;
     }
+
+    .socials img {
+        height: 20px;
+        width: auto;
+    }
+    
+    .socials .bluesky img {
+        height: 28px;
+    }
 }
 
 /* Adjust layout for screens 639px and smaller */
@@ -1376,4 +1386,20 @@ nav {
         grid-template-columns: repeat(3, 1fr);
         
     }
+}
+
+.crisis {
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.crisis a {
+    text-decoration: none;
+    color: #828282;
+}
+
+.crisis a:hover {
+    color: azure;
 }
