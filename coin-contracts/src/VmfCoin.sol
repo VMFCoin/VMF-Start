@@ -15,7 +15,10 @@ contract VmfCoin is ERC20 {
     address public usdc;   // Address of the USDC contract
     EnumerableSetLib.AddressSet private _allowedReceivers;
     address payable public taxReceiver;
-    uint8 taxRateBps = 33;
+    // TODO: have these managed by the owner (dao)
+    uint256 public donationPool = 1_000_000;   // amount of token to be donated to charity
+    uint8 taxRateBps = 33; // amount of tax to be taken from each transaction, in basis points (bps)
+    uint8 donationMultiple = 1; // multiple of USDC amount to mint VMF tokens
 
     // TODO: make upgradable?
     constructor(address _usdc, address payable _taxReceiver) ERC20() {
@@ -39,7 +42,8 @@ contract VmfCoin is ERC20 {
         }
 
         // Calculate the tax amount.
-        uint256 taxAmount = amount.mulWad(taxRateBps).divWad(10000);
+        uint256 lpAmount = amount.mulWad(taxRateBps).divWad(10000);
+        uint256 chairtyAmount = amount.mulWad(taxRateBps).divWad(10000);
         uint256 amountAfterTax = amount.saturatingSub(taxAmount);
 
         // Perform the transfer after deducting the tax.
@@ -120,8 +124,15 @@ contract VmfCoin is ERC20 {
         // Transfer USDC from sender to this contract
         address(usdc).safeTransferFrom(msg.sender, address(this), amountUSDC);
 
-        // Mint 3x tokens back to the sender
-        _mint(msg.sender, amountUSDC * 3);
+        if (amountUSDC == 0) {
+            revert("VMF: amountUSDC must be greater than zero");
+        }
+        uint256 usdcDonation = amountUSDC * donationMultiple / 10000;
+        if (usdcDonation > donationPool) {
+            revert("VMF: donation exceeds pool limit");
+        }
+
+        _mint(msg.sender, amountUSDC * donationMultiple);
 
         // Transfer USDC to the specified address
         address(usdc).safeTransfer(to, amountUSDC);
