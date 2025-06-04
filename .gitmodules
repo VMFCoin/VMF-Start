@@ -1,6 +1,6 @@
 [submodule "coin-contracts/lib/forge-std"]
 	path = coin-contracts/lib/forge-std
-	url = https://github.com/foundry-rs/forge-std
+	url = git@github.com:foundry-rs/forge-std.git
 [submodule "coin-contracts/lib/solady"]
 	path = coin-contracts/lib/solady
-	url = https://github.com/vectorized/solady
+	url = git@github.com:vectorized/solady.git
