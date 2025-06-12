@@ -590,12 +590,6 @@ const Index = () => {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Left Column - Content */}
                 <div className="text-center lg:text-left">
-                  <div className="mb-6">
-                    <Badge className="bg-blue-100 text-blue-800 px-4 py-2 text-sm font-semibold border-0">
-                      🚀 Revolutionizing Veteran Support
-                    </Badge>
-                  </div>
-
                   <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                     <span className="text-blue-900">Honor.</span>
                     <br />
