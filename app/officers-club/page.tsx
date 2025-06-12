@@ -36,11 +36,31 @@ const OfficersClubPage = () => {
   const router = useRouter()
 
   const walletOptions = [
-    { name: "Coinbase", logo: "/images/coinbase-logo.png", id: "coinbase" },
-    { name: "MetaMask", logo: "🦊", id: "metamask" },
-    { name: "Phantom", logo: "👻", id: "phantom" },
-    { name: "Rainbow", logo: "🌈", id: "rainbow" },
-    { name: "Safe", logo: "🔒", id: "safe" },
+    {
+      name: "Coinbase",
+      logo: "/images/coinbase-logo.png",
+      id: "coinbase",
+    },
+    {
+      name: "MetaMask",
+      logo: "🦊",
+      id: "metamask",
+    },
+    {
+      name: "Phantom",
+      logo: "👻",
+      id: "phantom",
+    },
+    {
+      name: "Rainbow",
+      logo: "🌈",
+      id: "rainbow",
+    },
+    {
+      name: "Safe",
+      logo: "🔒",
+      id: "safe",
+    },
   ]
 
   const connectWallet = async (walletId: string) => {
@@ -60,6 +80,7 @@ const OfficersClubPage = () => {
             throw new Error("MetaMask not installed")
           }
           break
+
         case "coinbase":
           if (typeof window !== "undefined" && (window as any).ethereum?.isCoinbaseWallet) {
             provider = (window as any).ethereum
@@ -70,6 +91,7 @@ const OfficersClubPage = () => {
             throw new Error("Coinbase Wallet not installed")
           }
           break
+
         case "phantom":
           if (typeof window !== "undefined" && (window as any).solana?.isPhantom) {
             const resp = await (window as any).solana.connect()
@@ -79,6 +101,7 @@ const OfficersClubPage = () => {
             throw new Error("Phantom Wallet not installed")
           }
           break
+
         case "rainbow":
           if (typeof window !== "undefined" && (window as any).ethereum?.isRainbow) {
             provider = (window as any).ethereum
@@ -89,11 +112,14 @@ const OfficersClubPage = () => {
             throw new Error("Rainbow Wallet not installed")
           }
           break
+
         case "safe":
           throw new Error("Safe Wallet connection requires Safe Apps environment")
+
         default:
           throw new Error("Unsupported wallet")
       }
+
       setShowWalletOptions(false)
     } catch (error: any) {
       console.error("Wallet connection error:", error)
@@ -158,6 +184,7 @@ const OfficersClubPage = () => {
         }
       }
     }
+
     checkWalletConnection()
   }, [])
 
@@ -287,6 +314,66 @@ const OfficersClubPage = () => {
             <div className="md:hidden mt-4 pb-4 border-t border-gray-700">
               <div className="flex flex-col space-y-3 pt-4">
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">Buy VMF</Button>
+
+                {/* Mobile Wallet Connection */}
+                {connectedWallet ? (
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-green-700">
+                        {connectedWallet}: {walletAddress && formatAddress(walletAddress)}
+                      </span>
+                    </div>
+                    <Button
+                      variant="outline"
+                      onClick={disconnectWallet}
+                      className="w-full text-red-600 border-red-200 hover:bg-red-50"
+                    >
+                      Disconnect Wallet
+                    </Button>
+                  </div>
+                ) : (
+                  <>
+                    <Button
+                      variant="outline"
+                      className="border-red-600 text-red-600 w-full"
+                      onClick={() => setShowWalletOptions(!showWalletOptions)}
+                      disabled={isConnecting}
+                    >
+                      <Wallet className="h-4 w-4 mr-2" />
+                      {isConnecting ? "Connecting..." : "Connect Wallet"}
+                    </Button>
+
+                    {/* Mobile Wallet Options */}
+                    {showWalletOptions && (
+                      <div className="bg-gray-50 rounded-lg p-3 space-y-2">
+                        {walletOptions.map((wallet) => (
+                          <button
+                            key={wallet.id}
+                            onClick={() => connectWallet(wallet.id)}
+                            disabled={isConnecting}
+                            className="w-full flex items-center space-x-3 px-3 py-2 bg-white rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50"
+                          >
+                            {wallet.logo.startsWith("/") ? (
+                              <img
+                                src={wallet.logo || "/placeholder.svg"}
+                                alt={`${wallet.name} logo`}
+                                className="w-5 h-5 rounded"
+                              />
+                            ) : (
+                              <span className="text-xl">{wallet.logo}</span>
+                            )}
+                            <span className="font-medium text-gray-900">{wallet.name}</span>
+                            {isConnecting && (
+                              <div className="ml-auto w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                )}
+
                 <Button
                   variant="outline"
                   className="w-full border-white/20 text-black bg-white/80 hover:bg-white"
@@ -419,39 +506,39 @@ const OfficersClubPage = () => {
         </section>
 
         {/* Coming Soon */}
-        <section className="py-16 bg-gradient-to-br from-purple-200 via-pink-100 to-blue-100">
+        <section className="py-16 bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <Badge className="bg-yellow-500/80 text-yellow-800 px-6 py-2 text-sm font-semibold border-0 mb-6">
+              <Badge className="bg-yellow-400/90 text-yellow-800 px-6 py-2 text-sm font-semibold mb-6">
                 <Zap className="w-4 h-4 mr-2" />
                 Coming Soon
               </Badge>
-              <h2 className="text-4xl font-bold text-gray-800 mb-6">More Features on the Way</h2>
-              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              <h2 className="text-4xl font-bold text-white mb-6">More Features on the Way</h2>
+              <p className="text-xl text-white/90 mb-10 leading-relaxed">
                 We're constantly adding new features to make the Officers Club the ultimate destination.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-8 mb-12">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Dice1 className="h-10 w-10 text-white" />
+                  <div className="w-16 h-16 bg-blue-500/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Dice1 className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Tournament Mode</h3>
-                  <p className="text-gray-600 text-sm">Compete in organized tournaments with prizes</p>
+                  <h3 className="text-lg font-bold text-white mb-2">Tournament Mode</h3>
+                  <p className="text-white/80 text-sm">Compete in organized tournaments with prizes</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Star className="h-10 w-10 text-white" />
+                  <div className="w-16 h-16 bg-red-500/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Star className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Rank System</h3>
-                  <p className="text-gray-600 text-sm">Earn ranks and unlock exclusive content</p>
+                  <h3 className="text-lg font-bold text-white mb-2">Rank System</h3>
+                  <p className="text-white/80 text-sm">Earn ranks and unlock exclusive content</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Users className="h-10 w-10 text-white" />
+                  <div className="w-16 h-16 bg-green-500/80 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Users className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Private Rooms</h3>
-                  <p className="text-gray-600 text-sm">Create private spaces for your unit or friends</p>
+                  <h3 className="text-lg font-bold text-white mb-2">Private Rooms</h3>
+                  <p className="text-white/80 text-sm">Create private spaces for your unit or friends</p>
                 </div>
               </div>
 
