@@ -19,6 +19,7 @@ import {
   Wallet,
   Menu,
   X,
+  Crown,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -198,7 +199,7 @@ const StoryPage = () => {
   const walletOptions = [
     {
       name: "Coinbase",
-      logo: "🟦",
+      logo: "/images/coinbase-logo.png",
       id: "coinbase",
     },
     {
@@ -275,6 +276,22 @@ const StoryPage = () => {
             <div className="hidden md:flex items-center space-x-4">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6">Buy VMF</Button>
 
+              {/* Officers Club Button */}
+              <Link href="/officers-club">
+                <Button
+                  className="relative overflow-hidden text-white font-bold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  style={{
+                    background:
+                      "linear-gradient(45deg, #3B82F6 0%, #EF4444 25%, #3B82F6 50%, #EF4444 75%, #3B82F6 100%)",
+                    backgroundSize: "200% 200%",
+                    animation: "gradient-shift 3s ease infinite",
+                  }}
+                >
+                  <Crown className="h-4 w-4 mr-2" />
+                  <span className="relative z-10 font-extrabold tracking-wide">OFFICERS CLUB</span>
+                </Button>
+              </Link>
+
               {/* Wallet Connection */}
               <div className="relative">
                 {connectedWallet ? (
@@ -320,7 +337,15 @@ const StoryPage = () => {
                             disabled={isConnecting}
                             className="w-full flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 transition-colors disabled:opacity-50"
                           >
-                            <span className="text-2xl">{wallet.logo}</span>
+                            {wallet.logo.startsWith("/") ? (
+                              <img
+                                src={wallet.logo || "/placeholder.svg"}
+                                alt={`${wallet.name} logo`}
+                                className="w-6 h-6 rounded"
+                              />
+                            ) : (
+                              <span className="text-2xl">{wallet.logo}</span>
+                            )}
                             <span className="font-medium text-gray-900">{wallet.name}</span>
                             {isConnecting && (
                               <div className="ml-auto w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
@@ -365,6 +390,22 @@ const StoryPage = () => {
                 <div className="flex flex-col space-y-2">
                   <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">Buy VMF</Button>
 
+                  {/* Mobile Officers Club Button */}
+                  <Link href="/officers-club">
+                    <Button
+                      className="w-full relative overflow-hidden text-white font-bold px-6 py-3 shadow-lg"
+                      style={{
+                        background:
+                          "linear-gradient(45deg, #3B82F6 0%, #EF4444 25%, #3B82F6 50%, #EF4444 75%, #3B82F6 100%)",
+                        backgroundSize: "200% 200%",
+                        animation: "gradient-shift 3s ease infinite",
+                      }}
+                    >
+                      <Crown className="h-4 w-4 mr-2" />
+                      <span className="relative z-10 font-extrabold tracking-wide">OFFICERS CLUB</span>
+                    </Button>
+                  </Link>
+
                   {/* Mobile Wallet Connection */}
                   {connectedWallet ? (
                     <div className="space-y-2">
@@ -404,7 +445,15 @@ const StoryPage = () => {
                               disabled={isConnecting}
                               className="w-full flex items-center space-x-3 px-3 py-2 bg-white rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50"
                             >
-                              <span className="text-xl">{wallet.logo}</span>
+                              {wallet.logo.startsWith("/") ? (
+                                <img
+                                  src={wallet.logo || "/placeholder.svg"}
+                                  alt={`${wallet.name} logo`}
+                                  className="w-5 h-5 rounded"
+                                />
+                              ) : (
+                                <span className="text-xl">{wallet.logo}</span>
+                              )}
                               <span className="font-medium text-gray-900">{wallet.name}</span>
                               {isConnecting && (
                                 <div className="ml-auto w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
@@ -1224,6 +1273,20 @@ const StoryPage = () => {
           </div>
         </div>
       </footer>
+      {/* CSS for gradient animation */}
+      <style jsx>{`
+        @keyframes gradient-shift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
       {/* Click outside to close wallet options */}
       {showWalletOptions && <div className="fixed inset-0 z-40" onClick={() => setShowWalletOptions(false)} />}
     </div>
