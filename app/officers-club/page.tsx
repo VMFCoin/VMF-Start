@@ -162,16 +162,6 @@ const OfficersClubPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50 relative">
       {/* Starry Background */}
-      <div className="fixed inset-0 pointer-events-none" aria-hidden="true">
-        <div
-          className="w-full h-full opacity-60"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fillOpacity='1'%3E%3Cpath d='M12 12l1 1-1 1-1-1zm8 8l1 1-1 1-1-1zm16 16l1 1-1 1-1-1zm24 24l1 1-1 1-1-1zm32 32l1 1-1 1-1-1zm8-72l1 1-1 1-1-1zm16-16l1 1-1 1-1-1zm24-8l1 1-1 1-1-1zm32 8l1 1-1 1-1-1zm-72 72l1 1-1 1-1-1zm72-72l1 1-1 1-1-1zm-72 0l1 1-1 1-1-1zm0 72l1 1-1 1-1-1z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: "100px 100px",
-            animation: "twinkle 4s ease-in-out infinite alternate",
-          }}
-        ></div>
-      </div>
 
       {/* Navigation */}
       <nav className="border-b border-border/20 bg-slate-800/95 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
@@ -305,14 +295,14 @@ const OfficersClubPage = () => {
       {/* Main Content */}
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-slate-900">
-          {/* Additional stars for hero section */}
-          <div className="absolute inset-0 opacity-40" aria-hidden="true">
+        <section className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
+          {/* Twinkling Stars Background */}
+          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
             <div
-              className="w-full h-full"
+              className="w-full h-full opacity-60"
               style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fillOpacity='1'%3E%3Cpath d='M30 5l2 8 8 2-8 2-2 8-2-8-8-2 8-2zm-20 20l1 3 3 1-3 1-1 3-1-3-3-1 3-1zm40 0l1 3 3 1-3 1-1 3-1-3-3-1 3-1zm-20 20l1 3 3 1-3 1-1 3-1-3-3-1 3-1z'/%3E%3C/g%3E%3C/svg%3E")`,
-                backgroundSize: "60px 60px",
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fillOpacity='1'%3E%3Cpath d='M12 12l1 1-1 1-1-1zm8 8l1 1-1 1-1-1zm16 16l1 1-1 1-1-1zm24 24l1 1-1 1-1-1zm32 32l1 1-1 1-1-1zm8-72l1 1-1 1-1-1zm16-16l1 1-1 1-1-1zm24-8l1 1-1 1-1-1zm32 8l1 1-1 1-1-1zm-72 72l1 1-1 1-1-1zm72-72l1 1-1 1-1-1zm-72 0l1 1-1 1-1-1zm0 72l1 1-1 1-1-1z'/%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundSize: "100px 100px",
                 animation: "twinkle 3s ease-in-out infinite alternate",
               }}
             ></div>
@@ -372,11 +362,14 @@ const OfficersClubPage = () => {
               </div>
               <div className="relative group">
                 <div className="relative bg-slate-700/50 backdrop-blur-sm rounded-3xl p-4 border border-white/10 shadow-2xl">
-                  <img
-                    src="/images/secret-officers-club.jpeg"
-                    alt="Secret Officers Club interior"
-                    className="w-full h-auto rounded-2xl shadow-lg"
-                  />
+                  <div className="overflow-hidden rounded-2xl shadow-lg" style={{ maxHeight: "500px" }}>
+                    <img
+                      src="/images/secret-officers-club.jpeg"
+                      alt="Secret Officers Club interior"
+                      className="w-full object-cover object-top"
+                      style={{ marginTop: "-150px" }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -418,22 +411,66 @@ const OfficersClubPage = () => {
         {/* Coming Soon */}
         <section className="py-16 bg-gradient-to-br from-purple-400 via-pink-300 to-blue-400">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge className="bg-yellow-400/90 text-yellow-800 px-6 py-2 text-sm font-semibold mb-6">
-                <Zap className="w-4 h-4 mr-2" />
-                Coming Soon
-              </Badge>
-              <h2 className="text-4xl font-bold text-white mb-6">More Features on the Way</h2>
-              <p className="text-xl text-white/90 mb-10 leading-relaxed">
-                We're constantly adding new features to make the Officers Club the ultimate destination.
-              </p>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white px-8 py-4 text-lg font-bold shadow-lg"
-                onClick={handleBackToHome}
-              >
-                Back to Main Site
-              </Button>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="bg-yellow-400/90 text-yellow-800 px-6 py-2 text-sm font-semibold mb-6">
+                  <Zap className="w-4 h-4 mr-2" />
+                  Coming Soon
+                </Badge>
+                <h2 className="text-4xl font-bold text-white mb-6">More Features on the Way</h2>
+                <p className="text-xl text-white/90 mb-10 leading-relaxed">
+                  We're constantly adding new features to make the Officers Club the ultimate destination.
+                </p>
+              </div>
+
+              {/* Upcoming Features Grid */}
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-yellow-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Trophy className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">Tournament Mode</h3>
+                    <p className="text-white/80 leading-relaxed">
+                      Compete in weekly tournaments with exclusive VMF rewards and bragging rights.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Users className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">Private Rooms</h3>
+                    <p className="text-white/80 leading-relaxed">
+                      Create exclusive gaming rooms for your unit, family, or close military friends.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-white/10 border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Crown className="h-8 w-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">VIP Lounge</h3>
+                    <p className="text-white/80 leading-relaxed">
+                      Exclusive access for top VMF holders with premium games and special perks.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 to-red-600 hover:from-blue-700 hover:to-red-700 text-white px-8 py-4 text-lg font-bold shadow-lg"
+                  onClick={handleBackToHome}
+                >
+                  Back to Main Site
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -541,18 +578,8 @@ const OfficersClubPage = () => {
       {/* CSS for animations */}
       <style jsx>{`
         @keyframes twinkle {
-          0% { 
-            opacity: 0.3; 
-            transform: scale(1);
-          }
-          50% { 
-            opacity: 1; 
-            transform: scale(1.1);
-          }
-          100% { 
-            opacity: 0.3; 
-            transform: scale(1);
-          }
+          0% { opacity: 0.4; }
+          100% { opacity: 0.8; }
         }
       `}</style>
 

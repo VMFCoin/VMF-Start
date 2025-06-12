@@ -745,7 +745,7 @@ const StoryPage = () => {
                       <Button
                         size="lg"
                         className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg font-bold"
-                        onClick={() => window.open("https://vmf-governance.vercel.app/community", "_blank")}
+                        onClick={() => window.open("https://vmf-governance.vercel.app/", "_blank")}
                       >
                         Join Our Mission
                         <ArrowRight className="ml-2 h-5 w-5" />
@@ -824,7 +824,7 @@ const StoryPage = () => {
                   <Button
                     size="lg"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold"
-                    onClick={() => window.open("https://vmf-governance.vercel.app/community", "_blank")}
+                    onClick={() => window.open("https://vmf-governance.vercel.app/", "_blank")}
                   >
                     Join Our Community
                     <ArrowRight className="ml-2 h-5 w-5" />

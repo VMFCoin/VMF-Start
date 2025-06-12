@@ -820,7 +820,7 @@ const Index = () => {
                 <Button
                   size="lg"
                   className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 text-lg font-bold shadow-lg"
-                  onClick={() => window.open("https://vmf-governance.vercel.app/community", "_blank")}
+                  onClick={() => window.open("https://vmf-governance.vercel.app/", "_blank")}
                 >
                   Join the DAO
                   <ArrowRight className="ml-2 h-5 w-5" />
