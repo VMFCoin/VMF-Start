@@ -13,18 +13,25 @@ contract VmfCoin is ERC20 {
 
     address public minter; // Address allowed to mint
     address public usdc;   // Address of the USDC contract
-    EnumerableSetLib.AddressSet private _allowedReceivers;
-    address payable public taxReceiver;
     // TODO: have these managed by the owner (dao)
-    uint256 public donationPool = 1_000_000;   // amount of token to be donated to charity
-    uint8 taxRateBps = 33; // amount of tax to be taken from each transaction, in basis points (bps)
-    uint8 donationMultiple = 1; // multiple of USDC amount to mint VMF tokens
+    EnumerableSetLib.AddressSet private _allowedReceivers; // this is the list of charities
 
-    // TODO: make upgradable?
-    constructor(address _usdc, address payable _taxReceiver) ERC20() {
+    address payable public charityReceiver; // where the DAO-charity allocation goes
+    uint8 charityRateBps = 33; // amount of tax to be taken from each transaction, in basis points (bps)
+
+    address payable public teamReceiver; // where the team allocation goes
+    uint8 teamRateBps = 10; // amount of tax to be taken from each transaction, in basis points (bps)
+
+    uint256 public donationPool = 1_000_000; // running total amount of token to be allocated to charity
+    uint256 donationMultipleBps = 10000; // multiple of USDC amount to mint VMF tokens
+
+    constructor(address _usdc,
+        address payable initCharityReceiver,
+        address payable initTeamReceiver) ERC20() {
         minter = msg.sender;
         usdc = _usdc;
-        taxReceiver = _taxReceiver;
+        charityReceiver = initCharityReceiver;
+        teamReceiver = initTeamReceiver;
     }
 
     /**
@@ -42,14 +49,16 @@ contract VmfCoin is ERC20 {
         }
 
         // Calculate the tax amount.
-        uint256 charityAmount = amount.mulWad(taxRateBps).divWad(10000);
-        uint256 amountAfterTax = amount.saturatingSub(charityAmount);
+        uint256 teamAmount = amount.mulWad(teamRateBps).divWad(10000);
+        uint256 charityAmount = amount.mulWad(charityRateBps).divWad(10000);
+        uint256 amountAfterCharity = amount.saturatingSub(charityAmount);
+        uint256 amountAfterTeam = amountAfterCharity.saturatingSub(teamAmount);
 
         // Perform the transfer after deducting the tax.
-        super._transfer(sender, recipient, amountAfterTax);
+        super._transfer(sender, recipient, amountAfterTeam);
 
-        // Send the tax to the taxReceiver.
-        super._transfer(sender, taxReceiver, charityAmount);
+        super._transfer(sender, charityReceiver, charityAmount);
+        super._transfer(sender, teamReceiver, charityAmount);
     }
 
     /**
@@ -109,8 +118,72 @@ contract VmfCoin is ERC20 {
         minter = newMinter;
         emit MinterChanged(newMinter);
     }
-
+    
     event MinterChanged(address newMinter);
+
+    function setTeamAddress(address payable newTeam) external onlyMinter {
+        require(
+            newTeam != address(0),
+            "VMF: new team is the zero address"
+        );
+        teamReceiver = newTeam;
+        emit TeamChanged(teamReceiver);
+    }
+
+    event TeamChanged(address newTeam);
+    
+    function setCharityPoolAddress(address payable newPool) external onlyMinter {
+        require(
+            newPool!= address(0),
+            "VMF: new pool is the zero address"
+        );
+        charityReceiver = newPool;
+        emit CharityPoolChanged(newPool);
+    }
+
+    event CharityPoolChanged(address newPool);
+    
+    function setCharityBps(uint8 newCharityBps)external onlyMinter {
+        charityRateBps = newCharityBps;
+        emit CharityRateChanged(newCharityBps);
+    }
+
+    event CharityRateChanged(uint8 newCharityBps);
+
+    function setTeamBps(uint8 newTeamBps)external onlyMinter {
+        teamRateBps = newTeamBps;
+        emit TeamRateChanged(newTeamBps);
+    }
+
+    event TeamRateChanged(uint8 newTeamBps);
+    
+    function addAllowedReceivers(address payable newCharity) external onlyMinter {
+        require(
+            newCharity != address(0),
+            "VMF: new receiver is the zero address"
+        );
+        _allowedReceivers.add(newCharity);
+        emit ReceiverAdded(newCharity);
+    }
+
+    function removeAllowedReceivers(address payable oldCharity) external onlyMinter {
+        _allowedReceivers.remove(oldCharity);
+        emit ReceiverRemoved(oldCharity);
+    }
+
+    event ReceiverRemoved(address newPool);
+    event ReceiverAdded(address newPool);
+    
+    function updateDonationPool(uint256 setDonationPool) external onlyMinter {
+        donationPool = setDonationPool;
+        emit DonationPoolChanged(setDonationPool);
+    }
+    function updateDonationMultipleBps(uint256 newDonationMultipleBps) external onlyMinter {
+        donationMultipleBps = newDonationMultipleBps;
+        emit DonationPoolChanged(donationMultipleBps);
+    }
+
+    event DonationPoolChanged(uint256 setDonationPool);
 
     /**
      * @dev Function to accept USDC, mint tokens to the sender, and transfer USDC.
@@ -126,12 +199,15 @@ contract VmfCoin is ERC20 {
         if (amountUSDC == 0) {
             revert("VMF: amountUSDC must be greater than zero");
         }
-        uint256 usdcDonation = amountUSDC * donationMultiple / 10000;
+        
+        uint256 usdcDonation = amountUSDC.mulWad(donationMultipleBps).divWad(10000);
+        // TODO: add a check to ensure that the donation does not exceed the pool limit
         if (usdcDonation > donationPool) {
             revert("VMF: donation exceeds pool limit");
         }
+        donationPool -= usdcDonation;
 
-        _mint(msg.sender, amountUSDC * donationMultiple);
+        _mint(msg.sender, usdcDonation);
 
         // Transfer USDC to the specified address
         address(usdc).safeTransfer(to, amountUSDC);
