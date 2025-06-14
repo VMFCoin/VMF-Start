@@ -42,15 +42,14 @@ contract VmfCoin is ERC20 {
         }
 
         // Calculate the tax amount.
-        uint256 lpAmount = amount.mulWad(taxRateBps).divWad(10000);
-        uint256 chairtyAmount = amount.mulWad(taxRateBps).divWad(10000);
-        uint256 amountAfterTax = amount.saturatingSub(taxAmount);
+        uint256 charityAmount = amount.mulWad(taxRateBps).divWad(10000);
+        uint256 amountAfterTax = amount.saturatingSub(charityAmount);
 
         // Perform the transfer after deducting the tax.
         super._transfer(sender, recipient, amountAfterTax);
 
         // Send the tax to the taxReceiver.
-        super._transfer(sender, taxReceiver, taxAmount);
+        super._transfer(sender, taxReceiver, charityAmount);
     }
 
     /**
