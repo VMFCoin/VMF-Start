@@ -192,18 +192,20 @@ contract VmfCoin is ERC20 {
      */
     function handleUSDC(uint256 amountUSDC, address to) external {
         require(_allowedReceivers.contains(to), "VMF: to is not an allowed receiver");
+        require(amountUSDC > 0, "VMF: amountUSDC must be greater than zero");
 
-        // Transfer USDC from sender to this contract
+        // Transfer USDC from sender to this contract (no allowance check needed as this is a safeTransferFrom)
         address(usdc).safeTransferFrom(msg.sender, address(this), amountUSDC);
 
-        require(amountUSDC > 0, "VMF: amountUSDC must be greater than zero");
-        
         uint256 usdcDonation = amountUSDC.mulWad(donationMultipleBps).divWad(10000);
         require(usdcDonation <= donationPool, "VMF: donation exceeds pool limit");
         
-        donationPool -= usdcDonation;
-
-        _mint(msg.sender, usdcDonation);
+        if (usdcDonation > 0) {
+            donationPool -= usdcDonation;
+            _mint(msg.sender, usdcDonation);
+            return;
+        }
+        
 
         // Transfer USDC to the specified address
         address(usdc).safeTransfer(to, amountUSDC);
