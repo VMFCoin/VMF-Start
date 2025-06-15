@@ -73,7 +73,7 @@ contract VmfCoin is ERC20 {
     }
 
     function name() public view virtual override returns (string memory) {
-        return "VmfCoin";
+        return "VMFCoin";
     }
     function symbol() public view virtual override returns (string memory) {
         return "VMF";
@@ -196,15 +196,11 @@ contract VmfCoin is ERC20 {
         // Transfer USDC from sender to this contract
         address(usdc).safeTransferFrom(msg.sender, address(this), amountUSDC);
 
-        if (amountUSDC == 0) {
-            revert("VMF: amountUSDC must be greater than zero");
-        }
+        require(amountUSDC > 0, "VMF: amountUSDC must be greater than zero");
         
         uint256 usdcDonation = amountUSDC.mulWad(donationMultipleBps).divWad(10000);
-        // TODO: add a check to ensure that the donation does not exceed the pool limit
-        if (usdcDonation > donationPool) {
-            revert("VMF: donation exceeds pool limit");
-        }
+        require(usdcDonation <= donationPool, "VMF: donation exceeds pool limit");
+        
         donationPool -= usdcDonation;
 
         _mint(msg.sender, usdcDonation);
