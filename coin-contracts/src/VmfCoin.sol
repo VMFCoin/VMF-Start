@@ -6,6 +6,7 @@ import {SafeTransferLib} from "lib/solady/src/utils/SafeTransferLib.sol";
 import {EnumerableSetLib} from "lib/solady/src/utils/EnumerableSetLib.sol";
 import { FixedPointMathLib } from "lib/solady/src/utils/FixedPointMathLib.sol";
 
+
 contract VmfCoin is ERC20 {
     using FixedPointMathLib for uint256;
     using SafeTransferLib for address;
@@ -15,6 +16,7 @@ contract VmfCoin is ERC20 {
     address public usdc;   // Address of the USDC contract
     // TODO: have these managed by the owner (dao)
     EnumerableSetLib.AddressSet private _allowedReceivers; // this is the list of charities
+    EnumerableSetLib.AddressSet private _taxExempt; // this is the list of owners
 
     address payable public charityReceiver; // where the DAO-charity allocation goes
     uint8 charityRateBps = 33; // amount of tax to be taken from each transaction, in basis points (bps)
@@ -22,7 +24,7 @@ contract VmfCoin is ERC20 {
     address payable public teamReceiver; // where the team allocation goes
     uint8 teamRateBps = 10; // amount of tax to be taken from each transaction, in basis points (bps)
 
-    uint256 public donationPool = 1_000_000; // running total amount of token to be allocated to charity
+    uint256 public donationPool = 1_000_000e18; // running total amount of wei-tokens to be allocated to charity
     uint256 donationMultipleBps = 10000; // multiple of USDC amount to mint VMF tokens
 
     constructor(address _usdc,
@@ -57,8 +59,10 @@ contract VmfCoin is ERC20 {
         // Perform the transfer after deducting the tax.
         super._transfer(sender, recipient, amountAfterTeam);
 
-        super._transfer(sender, charityReceiver, charityAmount);
-        super._transfer(sender, teamReceiver, charityAmount);
+        if(!_taxExempt.contains(sender) && !_taxExempt.contains(recipient)) {
+            super._transfer(sender, charityReceiver, charityAmount);
+            super._transfer(sender, teamReceiver, charityAmount);
+        }
     }
 
     /**
@@ -173,7 +177,24 @@ contract VmfCoin is ERC20 {
 
     event ReceiverRemoved(address newPool);
     event ReceiverAdded(address newPool);
-    
+
+    function addAllowedTaxExempt(address payable newTaxExempt) external onlyMinter {
+        require(
+            newTaxExempt != address(0),
+            "VMF: new tax exempt is the zero address"
+        );
+        _taxExempt.add(newTaxExempt);
+        emit TaxExemptAdded(newTaxExempt);
+    }
+
+    function removeAllowedTaxExempt(address payable oldTaxExempt) external onlyMinter {
+        _taxExempt.remove(oldTaxExempt);
+        emit TaxExemptRemoved(oldTaxExempt);
+    }
+
+    event TaxExemptRemoved(address newPool);
+    event TaxExemptAdded(address newPool);
+
     function updateDonationPool(uint256 setDonationPool) external onlyMinter {
         donationPool = setDonationPool;
         emit DonationPoolChanged(setDonationPool);
@@ -197,15 +218,13 @@ contract VmfCoin is ERC20 {
         // Transfer USDC from sender to this contract (no allowance check needed as this is a safeTransferFrom)
         address(usdc).safeTransferFrom(msg.sender, address(this), amountUSDC);
 
-        uint256 usdcDonation = amountUSDC.mulWad(donationMultipleBps).divWad(10000);
-        require(usdcDonation <= donationPool, "VMF: donation exceeds pool limit");
+        uint256 normalizedUsdcAmount = amountUSDC * (10**12);
+
+        uint256 vmfMatching = normalizedUsdcAmount * donationMultipleBps / 10000;
+        require(vmfMatching <= donationPool, "VMF: donation exceeds pool limit");
         
-        if (usdcDonation > 0) {
-            donationPool -= usdcDonation;
-            _mint(msg.sender, usdcDonation);
-            return;
-        }
-        
+        donationPool -= vmfMatching;
+        _mint(msg.sender, vmfMatching);
 
         // Transfer USDC to the specified address
         address(usdc).safeTransfer(to, amountUSDC);
